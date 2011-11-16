@@ -1,0 +1,1123 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="livetemplates.csharp.usevar">True</setting>
+      <setting name="SolutionAnalysisEnabled">True</setting>
+    </boolean>
+  </SettingsComponent>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="5617A46A-CBED-4E02-9857-160BBB4A96BD/d:Infrastructure/f:FileAdapter.cs" caret="0" fromTop="0" />
+      <File id="199D2225-C65D-4326-A592-754F5C6A0E5C/f:IKeyboard.cs" caret="0" fromTop="0" />
+      <File id="5617A46A-CBED-4E02-9857-160BBB4A96BD/f:Program.cs" caret="261" fromTop="7" />
+      <File id="199D2225-C65D-4326-A592-754F5C6A0E5C/f:Keyboard.cs" caret="139" fromTop="7" />
+      <File id="199D2225-C65D-4326-A592-754F5C6A0E5C/f:KeyboardEventArgs.cs" caret="61" fromTop="4" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="199D2225-C65D-4326-A592-754F5C6A0E5C/f:Keyboard.cs" caret="3873" fromTop="59" />
+      <File id="199D2225-C65D-4326-A592-754F5C6A0E5C/f:Keyboard.cs" caret="4143" fromTop="56" />
+      <File id="199D2225-C65D-4326-A592-754F5C6A0E5C/f:Keyboard.cs" caret="4974" fromTop="22" />
+      <File id="199D2225-C65D-4326-A592-754F5C6A0E5C/f:Keyboard.cs" caret="1136" fromTop="34" />
+      <File id="199D2225-C65D-4326-A592-754F5C6A0E5C/f:Keyboard.cs" caret="2468" fromTop="68" />
+      <File id="199D2225-C65D-4326-A592-754F5C6A0E5C/f:Keyboard.cs" caret="637" fromTop="17" />
+      <File id="199D2225-C65D-4326-A592-754F5C6A0E5C/f:Keyboard.cs" caret="5338" fromTop="88" />
+      <File id="199D2225-C65D-4326-A592-754F5C6A0E5C/f:Keyboard.cs" caret="5332" fromTop="80" />
+      <File id="199D2225-C65D-4326-A592-754F5C6A0E5C/f:KeyboardEventArgs.cs" caret="170" fromTop="4" />
+      <File id="199D2225-C65D-4326-A592-754F5C6A0E5C/f:Keyboard.cs" caret="139" fromTop="7" />
+      <File id="5617A46A-CBED-4E02-9857-160BBB4A96BD/f:Program.cs" caret="1198" fromTop="26" />
+      <File id="5617A46A-CBED-4E02-9857-160BBB4A96BD/f:Program.cs" caret="760" fromTop="19" />
+      <File id="5617A46A-CBED-4E02-9857-160BBB4A96BD/f:Program.cs" caret="263" fromTop="5" />
+    </RecentEdits>
+  </RecentFiles>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerMSTest>
+    <UseTestRunConfigFromMetadataFile>False</UseTestRunConfigFromMetadataFile>
+  </UnitTestRunnerMSTest>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Default">
+      <Item value="if" priority="67" />
+      <Item value="TimeTrackerForm" priority="4" />
+      <Item value="this" priority="27" />
+      <Item value="void" priority="37" />
+      <Item value="IMouseObserver" priority="1" />
+      <Item value="observer" priority="43" />
+      <Item value="e" priority="25" />
+      <Item value="value" priority="7" />
+      <Item value="delegate" priority="9" />
+      <Item value="new" priority="135" />
+      <Item value="UserActivityMonitor" priority="0" />
+      <Item value="userActivityMonitor" priority="4" />
+      <Item value="decimal" priority="0" />
+      <Item value="Keys" priority="62" />
+      <Item value="true" priority="17" />
+      <Item value="private" priority="74" />
+      <Item value="static" priority="13" />
+      <Item value="bool" priority="36" />
+      <Item value="control" priority="5" />
+      <Item value="else" priority="4" />
+      <Item value="false" priority="13" />
+      <Item value="MouseEventExtArgs" priority="0" />
+      <Item value="const" priority="12" />
+      <Item value="int" priority="20" />
+      <Item value="Constants" priority="12" />
+      <Item value="throw" priority="1" />
+      <Item value="NotImplementedException" priority="1" />
+      <Item value="switch" priority="3" />
+      <Item value="eventData" priority="1" />
+      <Item value="break" priority="8" />
+      <Item value="case" priority="7" />
+      <Item value="public" priority="44" />
+      <Item value="wParam" priority="2" />
+      <Item value="BatteryChargeStatus" priority="0" />
+      <Item value="EventArgFactory" priority="0" />
+      <Item value="keyKeyEventArgFactory" priority="1" />
+      <Item value="keyboardEventData" priority="10" />
+      <Item value="System" priority="1" />
+      <Item value="Windows" priority="0" />
+      <Item value="Forms" priority="0" />
+      <Item value="KeyEventArgs" priority="0" />
+      <Item value="override" priority="8" />
+      <Item value="IKeyboardObserver" priority="14" />
+      <Item value="Keyboard" priority="18" />
+      <Item value="keyboard" priority="48" />
+      <Item value="KeyboardEventPublisher" priority="11" />
+      <Item value="IKeyboardEventPublisher" priority="5" />
+      <Item value="KeyboardObserver" priority="1" />
+      <Item value="_keyboardObserver" priority="1" />
+      <Item value="publisher" priority="7" />
+      <Item value="readonly" priority="14" />
+      <Item value="ITimeTrakerView" priority="2" />
+      <Item value="List" priority="11" />
+      <Item value="List&lt;IKeyboardObserver&gt;" priority="0" />
+      <Item value="_observers" priority="30" />
+      <Item value="_keyboardCallback" priority="1" />
+      <Item value="KeyboardEventType" priority="4" />
+      <Item value="KeyboardEventArgs" priority="23" />
+      <Item value="foreach" priority="9" />
+      <Item value="in" priority="3" />
+      <Item value="ISystemGateway" priority="0" />
+      <Item value="_systemGateway" priority="1" />
+      <Item value="return" priority="74" />
+      <Item value="ISystemObserver" priority="7" />
+      <Item value="ListExtentionMethods" priority="0" />
+      <Item value="TItem" priority="0" />
+      <Item value="list" priority="0" />
+      <Item value="object" priority="17" />
+      <Item value="ThrowWin32Exception" priority="0" />
+      <Item value="UnhookKeyboardEvents" priority="2" />
+      <Item value="HookKeyboardEvents" priority="2" />
+      <Item value="_virtualKeyCode" priority="0" />
+      <Item value="CONTROL_KEY" priority="1" />
+      <Item value="_key" priority="6" />
+      <Item value="Alt" priority="1" />
+      <Item value="alt" priority="5" />
+      <Item value="shift" priority="4" />
+      <Item value="_keyboardPublisher" priority="1" />
+      <Item value="timeTrackerForm" priority="1" />
+      <Item value="IHotKeyObserver" priority="6" />
+      <Item value="HotKey" priority="3" />
+      <Item value="Dictionary&lt;HotKey,List&lt;IHotKeyObserver&gt;&gt;" priority="0" />
+      <Item value="hotKey" priority="5" />
+      <Item value="List&lt;IHotKeyObserver&gt;" priority="3" />
+      <Item value="hotKeyObservers" priority="2" />
+      <Item value="GetHotKeyObservers" priority="1" />
+      <Item value="item" priority="0" />
+      <Item value="hotKeyObserverCount" priority="0" />
+      <Item value="Register" priority="0" />
+      <Item value="GetHotKeyObserverCount" priority="0" />
+      <Item value="Unregister" priority="0" />
+      <Item value="GetKeyboard" priority="0" />
+      <Item value="keyCode" priority="0" />
+      <Item value="_controlPressed" priority="0" />
+      <Item value="_shiftPressed" priority="1" />
+      <Item value="_altPressed" priority="0" />
+      <Item value="Show" priority="1" />
+      <Item value="TimeTrackerPresenter" priority="6" />
+      <Item value="keyboardEventPublisher" priority="1" />
+      <Item value="event" priority="9" />
+      <Item value="timeTrackerView" priority="3" />
+      <Item value="_timeTrackerView" priority="29" />
+      <Item value="string" priority="85" />
+      <Item value="char" priority="2" />
+      <Item value="double" priority="10" />
+      <Item value="timeTextBox" priority="14" />
+      <Item value="out" priority="0" />
+      <Item value="EventHandler" priority="16" />
+      <Item value="EventArgs" priority="10" />
+      <Item value="TValue" priority="0" />
+      <Item value="_value" priority="0" />
+      <Item value="TimeEntered" priority="0" />
+      <Item value="EventArgs&lt;string&gt;" priority="1" />
+      <Item value="KeyDown" priority="3" />
+      <Item value="EventArgs&lt;Keys&gt;" priority="0" />
+      <Item value="KeyPressEventHandler" priority="1" />
+      <Item value="KeyEventHandler" priority="1" />
+      <Item value="KeyPressEventArgs" priority="0" />
+      <Item value="taskTextBox" priority="8" />
+      <Item value="taskComboBox" priority="4" />
+      <Item value="TaskChanged" priority="0" />
+      <Item value="index" priority="3" />
+      <Item value="AutoCompleteSource" priority="3" />
+      <Item value="source" priority="0" />
+      <Item value="AutoCompleteStringCollection" priority="5" />
+      <Item value="stringCollection" priority="0" />
+      <Item value="taskHistory" priority="12" />
+      <Item value="_taskHistory" priority="16" />
+      <Item value="AutoCompleteMode" priority="0" />
+      <Item value="using" priority="6" />
+      <Item value="Linq" priority="0" />
+      <Item value="IEnumerable" priority="5" />
+      <Item value="yield return" priority="0" />
+      <Item value="task" priority="13" />
+      <Item value="ListViewItemSelectionChangedEventHandler" priority="0" />
+      <Item value="IList" priority="1" />
+      <Item value="collection" priority="1" />
+      <Item value="CreateAutoCompleteCollection" priority="1" />
+      <Item value="typeof" priority="3" />
+      <Item value="obj" priority="1" />
+      <Item value="is" priority="18" />
+      <Item value="TaskHistory" priority="4" />
+      <Item value="as" priority="2" />
+      <Item value="_taskName" priority="4" />
+      <Item value="IComparable" priority="0" />
+      <Item value="TaskHistoryEntry" priority="9" />
+      <Item value="other" priority="2" />
+      <Item value="_lastSelected" priority="3" />
+      <Item value="name" priority="5" />
+      <Item value="lastSelected" priority="3" />
+      <Item value="DateTime" priority="9" />
+      <Item value="DateTimePicker" priority="0" />
+      <Item value="taskHistoryEntry" priority="4" />
+      <Item value="List&lt;TaskHistoryEntry&gt;" priority="1" />
+      <Item value="entry" priority="10" />
+      <Item value="taskName" priority="5" />
+      <Item value="ToArray" priority="0" />
+      <Item value="ITaskHistorySource" priority="2" />
+      <Item value="taskHistorySource" priority="0" />
+      <Item value="TaskHistorySource" priority="2" />
+      <Item value="IDisposable" priority="6" />
+      <Item value="noteTextBox" priority="1" />
+      <Item value="serializer" priority="6" />
+      <Item value="XmlSerializer" priority="0" />
+      <Item value="textWriter" priority="1" />
+      <Item value="T" priority="0" />
+      <Item value="ISerializer" priority="0" />
+      <Item value="Serialize" priority="0" />
+      <Item value="_serializer" priority="0" />
+      <Item value="_textWriter" priority="2" />
+      <Item value="TaskHistorySerializer" priority="0" />
+      <Item value="Dictionary" priority="0" />
+      <Item value="dictionary" priority="2" />
+      <Item value="FileDialog" priority="0" />
+      <Item value="FileMode" priority="0" />
+      <Item value="stream" priority="0" />
+      <Item value="TextWriter" priority="3" />
+      <Item value="StreamWriter" priority="0" />
+      <Item value="streamWriter" priority="2" />
+      <Item value="writer" priority="1" />
+      <Item value="while" priority="1" />
+      <Item value="reader" priority="1" />
+      <Item value="history" priority="2" />
+      <Item value="line" priority="5" />
+      <Item value="strings" priority="2" />
+      <Item value="historyToSave" priority="0" />
+      <Item value="File" priority="6" />
+      <Item value="Environment" priority="2" />
+      <Item value="Task" priority="23" />
+      <Item value="TASKS_FILE_NAME" priority="2" />
+      <Item value="TaskRepository" priority="1" />
+      <Item value="repository" priority="0" />
+      <Item value="tasks" priority="0" />
+      <Item value="_tasks" priority="10" />
+      <Item value="LoadTasks" priority="2" />
+      <Item value="ITaskRepository" priority="0" />
+      <Item value="_taskRepository" priority="5" />
+      <Item value="taskRepository" priority="1" />
+      <Item value="TResult" priority="0" />
+      <Item value="Select" priority="2" />
+      <Item value="selector" priority="0" />
+      <Item value="List&lt;Task&gt;" priority="0" />
+      <Item value="ITimesheet" priority="2" />
+      <Item value="timesheet" priority="5" />
+      <Item value="_timeSheet" priority="5" />
+      <Item value="GetTasks" priority="1" />
+      <Item value="Timesheet" priority="6" />
+      <Item value="base" priority="4" />
+      <Item value="FILE_NAME" priority="0" />
+      <Item value="null" priority="8" />
+      <Item value="continue" priority="0" />
+      <Item value="entryDate" priority="1" />
+      <Item value="lastEntryValueLabel" priority="0" />
+      <Item value="lastEntry" priority="0" />
+      <Item value="View" priority="16" />
+      <Item value="tc" priority="15" />
+      <Item value="DockingBehavior" priority="0" />
+      <Item value="MockRepository" priority="19" />
+      <Item value="ITimeTrackerView" priority="1" />
+      <Item value="_view" priority="0" />
+      <Item value="protected" priority="1" />
+      <Item value="virtual" priority="0" />
+      <Item value="Presenter" priority="1" />
+      <Item value="CreateSUT" priority="0" />
+      <Item value="History" priority="1" />
+      <Item value="view" priority="10" />
+      <Item value="Arg" priority="20" />
+      <Item value="class" priority="1" />
+      <Item value="sheet" priority="0" />
+      <Item value="su" priority="6" />
+      <Item value="TimeTrackerPresenterFixture" priority="0" />
+      <Item value="ApplicationController" priority="2" />
+      <Item value="TimeTracker" priority="0" />
+      <Item value="_presenter" priority="11" />
+      <Item value="presenter" priority="3" />
+      <Item value="ITimeTrackerPresenter" priority="5" />
+      <Item value="mock" priority="2" />
+      <Item value="_applicationController" priority="0" />
+      <Item value="controller" priority="1" />
+      <Item value="TestFixture" priority="0" />
+      <Item value="IExitApplication" priority="2" />
+      <Item value="icon" priority="2" />
+      <Item value="terminator" priority="1" />
+      <Item value="_terminator" priority="1" />
+      <Item value="Exit" priority="0" />
+      <Item value="IApplication" priority="3" />
+      <Item value="_application" priority="3" />
+      <Item value="application" priority="0" />
+      <Item value="Application" priority="2" />
+      <Item value="_notifyIcon" priority="7" />
+      <Item value="remove" priority="1" />
+      <Item value="NotifyIcon" priority="0" />
+      <Item value="_applicationExit" priority="3" />
+      <Item value="exit" priority="2" />
+      <Item value="applicationExit" priority="0" />
+      <Item value="app" priority="1" />
+      <Item value="NotifyIconAdapter" priority="0" />
+      <Item value="ExitApplication" priority="3" />
+      <Item value="INotifyIconPresenter" priority="0" />
+      <Item value="_notifyIconPresenter" priority="0" />
+      <Item value="ThreadExceptionDialog" priority="2" />
+      <Item value="AppDomain" priority="0" />
+      <Item value="TimeEntryPresenter" priority="0" />
+      <Item value="UnregisterForKeyboardEvents" priority="0" />
+      <Item value="IKeyUpObserver" priority="2" />
+      <Item value="IKeyDownObserver" priority="2" />
+      <Item value="List&lt;IKeyUpObserver&gt;" priority="0" />
+      <Item value="List&lt;IKeyDownObserver&gt;" priority="0" />
+      <Item value="_keyDownObservers" priority="1" />
+      <Item value="_keyUpObservers" priority="1" />
+      <Item value="_keyboardEventPublisher" priority="2" />
+      <Item value="keyboardPublisher" priority="0" />
+      <Item value="_keyboardObservers" priority="0" />
+      <Item value="IKeyboardEventObserver" priority="3" />
+      <Item value="ctrl" priority="3" />
+      <Item value="Control" priority="0" />
+      <Item value="Shift" priority="0" />
+      <Item value="Key" priority="0" />
+      <Item value="key" priority="2" />
+      <Item value="KeyUp" priority="8" />
+      <Item value="KeyPressed" priority="8" />
+      <Item value="Action" priority="1" />
+      <Item value="KeyboardHookStruct" priority="6" />
+      <Item value="publishEvent" priority="0" />
+      <Item value="IModifierKeyStateService" priority="1" />
+      <Item value="ModifierKeyStateService" priority="1" />
+      <Item value="_modifierKeyStateService" priority="1" />
+      <Item value="ref" priority="9" />
+      <Item value="handled" priority="9" />
+      <Item value="_keyboard" priority="5" />
+      <Item value="args" priority="0" />
+      <Item value="at" priority="0" />
+      <Item value="_keyboardEventArgs" priority="2" />
+      <Item value="Handled" priority="2" />
+      <Item value="_publisher" priority="0" />
+      <Item value="_modifierKeyState" priority="2" />
+      <Item value="Func" priority="0" />
+      <Item value="IntPtr" priority="4" />
+      <Item value="HookProc" priority="4" />
+      <Item value="_keyboardHookHandle" priority="0" />
+      <Item value="keyboardCallback" priority="0" />
+      <Item value="KeyboardHookProc" priority="0" />
+      <Item value="SetWindowsHookEx" priority="0" />
+      <Item value="idHook" priority="1" />
+      <Item value="hMod" priority="0" />
+      <Item value="dwThreadId" priority="0" />
+      <Item value="CallNextHookEx" priority="0" />
+      <Item value="nCode" priority="0" />
+      <Item value="short" priority="0" />
+      <Item value="GetAsyncKeyState" priority="0" />
+      <Item value="IUser32" priority="2" />
+      <Item value="_user32" priority="12" />
+      <Item value="user32" priority="5" />
+      <Item value="User32" priority="2" />
+      <Item value="assembly" priority="1" />
+      <Item value="InternalsVisibleTo" priority="1" />
+      <Item value="for" priority="2" />
+      <Item value="TestCase" priority="0" />
+      <Item value="_callback" priority="4" />
+      <Item value="_observer" priority="5" />
+      <Item value="option" priority="3" />
+      <Item value="callback" priority="1" />
+      <Item value="unsafe" priority="1" />
+      <Item value="_keyboardData" priority="2" />
+      <Item value="lParam" priority="1" />
+      <Item value="invocation" priority="13" />
+      <Item value="GetArgumentsForCallsMadeOn" priority="2" />
+      <Item value="Assert" priority="3" />
+      <Item value="RhinoMocksExtensions" priority="0" />
+      <Item value="keyboardData" priority="1" />
+      <Item value="VirtualKeyCode" priority="19" />
+      <Item value="Is" priority="5" />
+      <Item value="Rhino.Mocks" priority="0" />
+      <Item value="Constraints" priority="4" />
+      <Item value="Mocks" priority="3" />
+      <Item value="Anything" priority="0" />
+      <Item value="RhinoMocks" priority="0" />
+      <Item value="AbstractConstraint" priority="2" />
+      <Item value="Rhino" priority="1" />
+      <Item value="IsArg" priority="0" />
+      <Item value="Int16" priority="1" />
+      <Item value="ushort" priority="0" />
+      <Item value="T_VIRTUAL_KEY" priority="0" />
+      <Item value="Marshal" priority="1" />
+      <Item value="ptr" priority="1" />
+      <Item value="ExtraInfo" priority="0" />
+      <Item value="Flags" priority="0" />
+      <Item value="ScanCode" priority="0" />
+      <Item value="Time" priority="0" />
+      <Item value="KEYBOARD_HOOK_HANDLE" priority="3" />
+      <Item value="ToolStripPanelRenderEventHandler" priority="0" />
+      <Item value="_secondObserver" priority="0" />
+      <Item value="IKeyboard" priority="3" />
+      <Item value="IsKeyPressed" priority="2" />
+      <Item value="_keyPressed" priority="2" />
+      <Item value="keyboardEventArgs" priority="0" />
+      <Item value="_onKeyUp" priority="8" />
+      <Item value="_onKeyDown" priority="7" />
+      <Item value="Delegate" priority="3" />
+      <Item value="_keyDownHandler" priority="1" />
+      <Item value="_keyUpEventHandler" priority="1" />
+      <Item value="_keyboardEventHandler" priority="1" />
+      <Item value="handler" priority="2" />
+      <Item value="options" priority="1" />
+      <Item value="keyboardEventHandler" priority="1" />
+      <Item value="eventArgs" priority="0" />
+      <Item value="firstHandler" priority="0" />
+      <Item value="secondHandler" priority="0" />
+      <Item value="_firstObserver" priority="0" />
+      <Item value="_secondHandler" priority="0" />
+      <Item value="NotifyIconPresenter" priority="0" />
+      <Item value="taskData" priority="0" />
+      <Item value="TField" priority="0" />
+      <Item value="record" priority="6" />
+      <Item value="TimeSpan" priority="1" />
+      <Item value="Activity" priority="4" />
+      <Item value="_file" priority="17" />
+      <Item value="TimesheetFile" priority="3" />
+      <Item value="IFile" priority="9" />
+      <Item value="file" priority="8" />
+      <Item value="_taskEntryView" priority="5" />
+      <Item value="duration" priority="0" />
+      <Item value="long" priority="0" />
+      <Item value="_activities" priority="15" />
+      <Item value="activity" priority="8" />
+      <Item value="stringBuilder" priority="2" />
+      <Item value="List&lt;Activity&gt;" priority="0" />
+      <Item value="activityName" priority="0" />
+      <Item value="_fileName" priority="5" />
+      <Item value="FileStyleUriParser" priority="0" />
+      <Item value="content" priority="7" />
+      <Item value="RecentActivities" priority="4" />
+      <Item value="recentActivities" priority="5" />
+      <Item value="FileAdapter" priority="0" />
+      <Item value="ConfigurationManager" priority="4" />
+      <Item value="DURATION" priority="0" />
+      <Item value="float" priority="1" />
+      <Item value="FileAssert" priority="0" />
+      <Item value="ae" priority="11" />
+      <Item value="sut" priority="0" />
+      <Item value="_taskDate" priority="4" />
+      <Item value="_taskDuration" priority="0" />
+      <Item value="_task" priority="14" />
+      <Item value="TASK_DURATION" priority="1" />
+      <Item value="actual" priority="4" />
+      <Item value="charactersToTim" priority="0" />
+      <Item value="doubleQuote" priority="4" />
+      <Item value="durrationInHours" priority="0" />
+      <Item value="durationInHours" priority="0" />
+      <Item value="arecord" priority="0" />
+      <Item value="an" priority="0" />
+      <Item value="ACTIVITY_NAME" priority="2" />
+      <Item value="lines" priority="9" />
+      <Item value="Contains" priority="2" />
+      <Item value="_recentActivities" priority="14" />
+      <Item value="FIRST_ACTIVITY_NAME" priority="6" />
+      <Item value="SECOND_ACTIVITY_NAME" priority="6" />
+      <Item value="THIRD_ACTIVITY_NAME" priority="4" />
+      <Item value="LAST_ACTIVITY_NAME" priority="4" />
+      <Item value="activities" priority="3" />
+      <Item value="FIRST_ACTIVITY" priority="3" />
+      <Item value="SECOND_ACTIVITY" priority="2" />
+      <Item value="FORTH_ACTIVITY_NAME" priority="1" />
+      <Item value="NINTH_ACTIVITY_NAME" priority="2" />
+      <Item value="TENTH_ACTIVITY_NAME" priority="1" />
+      <Item value="EIGHTH_ACTIVITY_NAME" priority="0" />
+      <Item value="SEVENTH_ACTIVITY_NAME" priority="1" />
+      <Item value="SIXTH_ACTIVITY_NAME" priority="0" />
+      <Item value="FIFTH_ACTIVITY_NAME" priority="0" />
+      <Item value="EXISTING_ACTIVITY_NAME" priority="7" />
+      <Item value="ExpectedExceptionAttribute" priority="0" />
+      <Item value="match" priority="0" />
+      <Item value="contains" priority="6" />
+      <Item value="ContainsActivities" priority="1" />
+      <Item value="Count" priority="0" />
+      <Item value="Length" priority="8" />
+      <Item value="arguments" priority="0" />
+      <Item value="ndx" priority="1" />
+      <Item value="contents" priority="5" />
+      <Item value="VerifyContents" priority="6" />
+      <Item value="invocations" priority="0" />
+      <Item value="ConfigurationProperty" priority="0" />
+      <Item value="DefaultValue" priority="0" />
+      <Item value="IsRequired" priority="0" />
+      <Item value="Ctrl" priority="0" />
+      <Item value="CTRL_CONFIG" priority="1" />
+      <Item value="ALT_CONFIG" priority="1" />
+      <Item value="KEY_CONFIG" priority="0" />
+      <Item value="HotKeyConfig" priority="1" />
+      <Item value="IHotKeyConfig" priority="2" />
+      <Item value="_hotKeyConfig" priority="3" />
+      <Item value="hotKeyConfig" priority="6" />
+      <Item value="config" priority="3" />
+      <Item value="hotKeySpecification" priority="2" />
+      <Item value="spec" priority="0" />
+      <Item value="satisfied" priority="3" />
+      <Item value="_hotKeySpecification" priority="0" />
+      <Item value="KeyboardAdapter" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:TimeTracker.UserActivityMonitor">
+      <Item value="KeyDown" priority="1" />
+      <Item value="KeyPress" priority="1" />
+      <Item value="KeyUp" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.KeyEventArgs">
+      <Item value="Control" priority="6" />
+      <Item value="KeyData" priority="2" />
+      <Item value="Handled" priority="3" />
+      <Item value="KeyCode" priority="5" />
+      <Item value="SuppressKeyPress" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Windows.Forms.Keys">
+      <Item value="T" priority="5" />
+      <Item value="Alt" priority="1" />
+      <Item value="Control" priority="2" />
+      <Item value="Shift" priority="2" />
+      <Item value="Escape" priority="1" />
+      <Item value="Enter" priority="2" />
+      <Item value="Menu" priority="5" />
+      <Item value="ControlKey" priority="3" />
+      <Item value="ShiftKey" priority="2" />
+      <Item value="Tab" priority="0" />
+      <Item value="ea" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:TimeTracker.TimeTrackerForm">
+      <Item value="Show" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Gma.UserActivityMonitor.Constants">
+      <Item value="WM_SYSKEYDOWN" priority="2" />
+      <Item value="WM_KEYDOWN" priority="1" />
+      <Item value="HC_ACTION" priority="0" />
+      <Item value="WM_SYSKEYUP" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Gma.UserActivityMonitor.KeyboardHookStruct">
+      <Item value="VirtualKeyCode" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Gma.UserActivityMonitor.KeyEventArgFactory">
+      <Item value="Create" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:UserActivity.KeyboardEventPublisher">
+      <Item value="RegisterForKeyboardEvents" priority="3" />
+      <Item value="UnregisterForKeyboardEvents" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.List`1">
+      <Item value="Count" priority="10" />
+      <Item value="Add" priority="7" />
+      <Item value="Remove" priority="3" />
+      <Item value="Contains" priority="6" />
+      <Item value="ForEach" priority="3" />
+      <Item value="ToArray" priority="1" />
+      <Item value="Insert" priority="1" />
+      <Item value="IndexOf" priority="0" />
+      <Item value="Take" priority="1" />
+      <Item value="Sort" priority="0" />
+      <Item value="Select" priority="0" />
+      <Item value="OrderBy" priority="1" />
+      <Item value="FindIndex" priority="0" />
+      <Item value="RemoveAt" priority="0" />
+      <Item value="OrderByDescending" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@UserActivity.KeyboardEventType">
+      <Item value="KeyDown" priority="2" />
+      <Item value="KeyUp" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Win32.KeyboardHookStruct">
+      <Item value="VirtualKeyCode" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:UserActivity.Keyboard">
+      <Item value="WasHandled" priority="0" />
+      <Item value="Control" priority="4" />
+      <Item value="Key" priority="4" />
+      <Item value="Shift" priority="1" />
+      <Item value="Alt" priority="1" />
+      <Item value="AltPressed" priority="2" />
+      <Item value="CtrlPressed" priority="2" />
+      <Item value="ShiftPressed" priority="2" />
+      <Item value="Stub" priority="0" />
+      <Item value="KeyUp" priority="9" />
+      <Item value="KeyDown" priority="0" />
+      <Item value="KeyPressed" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@UserActivity.Keys">
+      <Item value="CONTROL" priority="4" />
+      <Item value="LEFT_CONTROL" priority="2" />
+      <Item value="RIGHT_CONTROL" priority="2" />
+      <Item value="LEFT_ALT" priority="2" />
+      <Item value="RIGHT_ALT" priority="2" />
+      <Item value="ALT" priority="4" />
+      <Item value="SHIFT" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:UserActivity.IKeyboardObserver">
+      <Item value="GetHashCode" priority="0" />
+      <Item value="KeyUp" priority="1" />
+      <Item value="KeyDown" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.Dictionary`2">
+      <Item value="ContainsKey" priority="2" />
+      <Item value="Add" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:WindowsHotKey.IHotKeyObserver">
+      <Item value="HotKey" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:UserActivity.IKeyboardEventPublisher">
+      <Item value="RegisterForKeyboardEvents" priority="2" />
+      <Item value="UnregisterForKeyboardEvents" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:TimeTracker.ITimeTrakerView">
+      <Item value="ViewClosed" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:TimeTracker.ViewClosedEventArgs">
+      <Item value="Cancel" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Double">
+      <Item value="TryParse" priority="1" />
+      <Item value="MinValue" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.TextBox">
+      <Item value="Text" priority="9" />
+      <Item value="SelectionStart" priority="3" />
+      <Item value="SelectionLength" priority="1" />
+      <Item value="Clear" priority="4" />
+      <Item value="SelectedText" priority="0" />
+      <Item value="Focus" priority="2" />
+      <Item value="AutoCompleteCustomSource" priority="2" />
+      <Item value="AutoCompleteSource" priority="1" />
+      <Item value="AutoCompleteMode" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:TimeTracker.ITimeTrackerView">
+      <Item value="TimeEntered" priority="1" />
+      <Item value="KeyDown" priority="3" />
+      <Item value="Hide" priority="1" />
+      <Item value="TimeTextChanged" priority="4" />
+      <Item value="TimeText" priority="6" />
+      <Item value="TaskTextChanged" priority="0" />
+      <Item value="TaskSetFocus" priority="2" />
+      <Item value="TimeSetFocus" priority="0" />
+      <Item value="TaskHistory" priority="0" />
+      <Item value="TaskText" priority="1" />
+      <Item value="NoteText" priority="0" />
+      <Item value="Dispose" priority="1" />
+      <Item value="Time" priority="2" />
+      <Item value="AssertWasNotCalled" priority="0" />
+      <Item value="Raise" priority="0" />
+      <Item value="Expect" priority="1" />
+      <Item value="Stub" priority="1" />
+      <Item value="AssertWasCalled" priority="4" />
+      <Item value="Clear" priority="0" />
+      <Item value="SetTaskHistory" priority="0" />
+      <Item value="SetLastEntry" priority="0" />
+      <Item value="Show" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:TimeTracker.EventArgs`1">
+      <Item value="Value" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.String">
+      <Item value="Length" priority="3" />
+      <Item value="Remove" priority="1" />
+      <Item value="CompareTo" priority="1" />
+      <Item value="Split" priority="6" />
+      <Item value="Replace" priority="2" />
+      <Item value="Trim" priority="2" />
+      <Item value="ToLower" priority="6" />
+      <Item value="Equals" priority="2" />
+      <Item value="TrimEnd" priority="2" />
+      <Item value="TrimStart" priority="2" />
+      <Item value="Contains" priority="9" />
+      <Item value="ToUpper" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.ComboBox">
+      <Item value="Text" priority="1" />
+      <Item value="AutoCompleteSource" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.String">
+      <Item value="Empty" priority="9" />
+      <Item value="IsNullOrEmpty" priority="2" />
+      <Item value="Format" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Windows.Forms.AutoCompleteSource">
+      <Item value="RecentlyUsedList" priority="0" />
+      <Item value="CustomSource" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.AutoCompleteStringCollection">
+      <Item value="AddRange" priority="4" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Windows.Forms.AutoCompleteMode">
+      <Item value="SuggestAppend" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.IList`1">
+      <Item value="Contains" priority="0" />
+      <Item value="Add" priority="0" />
+      <Item value="ToArray" priority="1" />
+      <Item value="ToList" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:TimeTracker.TaskHistory">
+      <Item value="TaskName" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:TimeTracker.TaskHistoryEntry">
+      <Item value="_taskName" priority="0" />
+      <Item value="TaskName" priority="1" />
+      <Item value="_lastSelected" priority="2" />
+      <Item value="ToString" priority="0" />
+      <Item value="LastSelected" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.DateTime">
+      <Item value="CompareTo" priority="2" />
+      <Item value="Ticks" priority="1" />
+      <Item value="DayOfWeek" priority="3" />
+      <Item value="TimeOfDay" priority="0" />
+      <Item value="ToString" priority="0" />
+      <Item value="Subtract" priority="1" />
+      <Item value="AddDays" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.DateTime">
+      <Item value="Now" priority="8" />
+      <Item value="MinValue" priority="1" />
+      <Item value="MaxValue" priority="0" />
+      <Item value="ParseExact" priority="0" />
+      <Item value="Parse" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.IEnumerable`1">
+      <Item value="ToArray" priority="1" />
+      <Item value="ToString" priority="1" />
+      <Item value="OrderBy" priority="3" />
+      <Item value="Select" priority="1" />
+      <Item value="GetEnumerator" priority="0" />
+      <Item value="ToList" priority="1" />
+      <Item value="OrderByDescending" priority="1" />
+      <Item value="Aggregate" priority="0" />
+      <Item value="Max" priority="0" />
+      <Item value="Concat" priority="0" />
+      <Item value="Count" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Linq.IOrderedEnumerable`1">
+      <Item value="ToArray" priority="0" />
+      <Item value="Select" priority="0" />
+      <Item value="Reverse" priority="0" />
+      <Item value="First" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Xml.Serialization.XmlSerializer">
+      <Item value="Serialize" priority="2" />
+      <Item value="UnreferencedObject" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@TimeTracker.Properties.Resources">
+      <Item value="ResourceManager" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Resources.ResourceManager">
+      <Item value="GetStream" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Text.Encoding">
+      <Item value="Default" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Xml.XmlTextWriter">
+      <Item value="Flush" priority="0" />
+      <Item value="Close" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:TimeTracker.ISerializer`1">
+      <Item value="Serialize" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.IO.File">
+      <Item value="OpenWrite" priority="0" />
+      <Item value="OpenText" priority="2" />
+      <Item value="Replace" priority="0" />
+      <Item value="Open" priority="0" />
+      <Item value="AppendText" priority="0" />
+      <Item value="Exists" priority="2" />
+      <Item value="AppendAllText" priority="0" />
+      <Item value="ReadAllLines" priority="0" />
+      <Item value="WriteAllLines" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.IO.FileMode">
+      <Item value="Truncate" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.FileStream">
+      <Item value="Write" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.StreamWriter">
+      <Item value="WriteLine" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.TextWriter">
+      <Item value="WriteLine" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.StreamReader">
+      <Item value="ReadLine" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Environment">
+      <Item value="TickCount" priority="2" />
+      <Item value="NewLine" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:TimeTracker.TaskRepository">
+      <Item value="GetTasks" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:TimeTracker.ITaskRepository">
+      <Item value="GetTasks" priority="3" />
+      <Item value="Equals" priority="0" />
+      <Item value="Add" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:TimeTracker.Task">
+      <Item value="ToString" priority="1" />
+      <Item value="TaskName" priority="0" />
+      <Item value="Date" priority="5" />
+      <Item value="Duration" priority="7" />
+      <Item value="Activity" priority="5" />
+      <Item value="Note" priority="4" />
+      <Item value="Equals" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:TimeTracker.ITimesheet">
+      <Item value="Update" priority="0" />
+      <Item value="Stub" priority="0" />
+      <Item value="GetLastEntry" priority="0" />
+      <Item value="GetLastTask" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:UserActivity.KeyboardObserver">
+      <Item value="Dispose" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.EventArgs">
+      <Item value="Empty" priority="6" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.Label">
+      <Item value="Text" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Rhino.Mocks.MockRepository">
+      <Item value="GenerateStrictMock" priority="2" />
+      <Item value="GenerateMock" priority="11" />
+      <Item value="GenerateStub" priority="10" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Rhino.Mocks.Arg`1">
+      <Item value="Is" priority="35" />
+      <Item value="Ref" priority="0" />
+      <Item value="Matches" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Rhino.Mocks.Constraints.IsArg`1">
+      <Item value="Anything" priority="45" />
+      <Item value="Equal" priority="11" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Rhino.Mocks.Interfaces.IMethodOptions`1">
+      <Item value="Return" priority="21" />
+      <Item value="Do" priority="3" />
+      <Item value="IgnoreArguments" priority="9" />
+      <Item value="WhenCalled" priority="5" />
+      <Item value="Repeat" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Double">
+      <Item value="ToString" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:TimeTracker.TimeTrackerPresenter">
+      <Item value="KeyDown" priority="0" />
+      <Item value="Dispose" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:TimeTracker.Tests.TimeTrackerPresenterFixture">
+      <Item value="SetUp" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:TimeTracker.ITaskHistory">
+      <Item value="Stub" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:TimeTracker.Presentation.TimeTrackerPresenter">
+      <Item value="Dispose" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:TimeTracker.ITimeTrackerPresenter">
+      <Item value="ShowView" priority="2" />
+      <Item value="Dispose" priority="1" />
+      <Item value="AssertWasCalled" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:TimeTracker.ApplicationController">
+      <Item value="KeyDown" priority="0" />
+      <Item value="Dispose" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:TimeTracker.IExitApplication">
+      <Item value="Exit" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Windows.Forms.Application">
+      <Item value="Exit" priority="0" />
+      <Item value="MessageLoop" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:TimeTracker.Presentation.INotifyIcon">
+      <Item value="ExitApplication" priority="1" />
+      <Item value="Hide" priority="1" />
+      <Item value="AssertWasCalled" priority="1" />
+      <Item value="Dispose" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.NotifyIcon">
+      <Item value="Dispose" priority="0" />
+      <Item value="Visible" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:TimeTracker.IApplicationExit">
+      <Item value="AssertWasCalled" priority="1" />
+      <Item value="ExitApplication" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:TimeTracker.IApplication">
+      <Item value="Raise" priority="0" />
+      <Item value="Exit" priority="1" />
+      <Item value="AssertWasCalled" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.AppDomain">
+      <Item value="CurrentDomain" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.AppDomain">
+      <Item value="ActivationContext" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.ActivationContext">
+      <Item value="Form" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Threading.Thread">
+      <Item value="CurrentContext" priority="0" />
+      <Item value="CurrentThread" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Threading.Thread">
+      <Item value="Join" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:UserActivity.IKeyUpObserver">
+      <Item value="KeyUp" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:UserActivity.IKeyDownObserver">
+      <Item value="KeyDown" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:UserActivity.IKeyboardEventObserver">
+      <Item value="KeyDown" priority="3" />
+      <Item value="AssertWasCalled" priority="2" />
+      <Item value="Stub" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:UserActivity.KeyboardHookStruct">
+      <Item value="VirtualKeyCode" priority="4" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:UserActivity.IModifierKeyStateService">
+      <Item value="IsAltPressed" priority="0" />
+      <Item value="IsCtrlPressed" priority="0" />
+      <Item value="IsShiftPressed" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:UserActivity.IKeyboard">
+      <Item value="KeyDown" priority="4" />
+      <Item value="Raise" priority="0" />
+      <Item value="Stub" priority="3" />
+      <Item value="Alt" priority="0" />
+      <Item value="Ctrl" priority="0" />
+      <Item value="Shift" priority="0" />
+      <Item value="Key" priority="0" />
+      <Item value="AssertWasCalled" priority="0" />
+      <Item value="Dispose" priority="0" />
+      <Item value="ShiftPressed" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:UserActivity.KeyboardEventArgs">
+      <Item value="Handled" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Void">
+      <Item value="Equals" priority="0" />
+      <Item value="GetArgumentsForCallsMadeOn" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:UserActivity.IModifierKeyState">
+      <Item value="IsAltPressed" priority="0" />
+      <Item value="IsCtrlPressed" priority="0" />
+      <Item value="IsShiftPressed" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:UserActivity.IUser32">
+      <Item value="AssertWasCalled" priority="2" />
+      <Item value="SetWindowsHook" priority="3" />
+      <Item value="Stub" priority="4" />
+      <Item value="GetArgumentsForCallsMadeOn" priority="0" />
+      <Item value="GetKeyState" priority="0" />
+      <Item value="CallNextHook" priority="1" />
+      <Item value="UnhookWindowsHook" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:UserActivity.HookProc">
+      <Item value="Invoke" priority="0" />
+      <Item value="Raise" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Runtime.InteropServices.Marshal">
+      <Item value="StructureToPtr" priority="1" />
+      <Item value="PtrToStructure" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Int32">
+      <Item value="MinValue" priority="4" />
+      <Item value="Parse" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@NUnit.Framework.Assert">
+      <Item value="Equals" priority="0" />
+      <Item value="AreEqual" priority="2" />
+      <Item value="True" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Rhino.Mocks.RhinoMocksExtensions">
+      <Item value="GetArgumentsForCallsMadeOn" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Convert">
+      <Item value="ToInt16" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@NUnit.Framework.Is">
+      <Item value="All" priority="0" />
+      <Item value="EqualTo" priority="0" />
+      <Item value="False" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Rhino.Mocks.Constraints.Is">
+      <Item value="Anything" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Rhino.Mocks.Constraints.OutRefArgDummy`1">
+      <Item value="Dummy" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Int16">
+      <Item value="MaxValue" priority="0" />
+      <Item value="MinValue" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.UInt16">
+      <Item value="MaxValue" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Rhino.Mocks.MethodInvocation">
+      <Item value="Arguments" priority="6" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@UserActivity.Constants">
+      <Item value="HC_ACTION" priority="2" />
+      <Item value="WM_KEYUP" priority="1" />
+      <Item value="WM_SYSKEYUP" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Rhino.Mocks.Interfaces.IRepeat`1">
+      <Item value="Once" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.EventHandler`1">
+      <Item value="Target" priority="0" />
+      <Item value="Method" priority="0" />
+      <Item value="AssertWasCalled" priority="1" />
+      <Item value="Stub" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Delegate">
+      <Item value="Combine" priority="0" />
+      <Item value="Remove" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:TimeTracker.Presentation.NotifyIconPresenter">
+      <Item value="ExitApplication" priority="0" />
+      <Item value="Dispose" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@TimeTracker.Task">
+      <Item value="EmptyTask" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:TimeTracker.Presentation.ITaskEntryView">
+      <Item value="Duration" priority="2" />
+      <Item value="Activity" priority="0" />
+      <Item value="Note" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:TimeTracker.IFile">
+      <Item value="ReadAllLines" priority="3" />
+      <Item value="AppendAllText" priority="1" />
+      <Item value="Stub" priority="3" />
+      <Item value="Exists" priority="1" />
+      <Item value="AssertWasCalled" priority="4" />
+      <Item value="WriteAllLines" priority="2" />
+      <Item value="BackToRecord" priority="0" />
+      <Item value="Replay" priority="0" />
+      <Item value="GetArgumentsForCallsMadeOn" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Int64">
+      <Item value="Parse" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:TimeTracker.Activity">
+      <Item value="Timestamp" priority="3" />
+      <Item value="ActivityName" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Text.StringBuilder">
+      <Item value="AppendFormat" priority="0" />
+      <Item value="ToString" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Configuration.ConfigurationManager">
+      <Item value="AppSettings" priority="4" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Single">
+      <Item value="Parse" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:TimeTracker.Infrastructure.TimesheetFile">
+      <Item value="GetLastTask" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:TimeTracker.Infrastructure.Timesheet">
+      <Item value="GetLastTask" priority="0" />
+      <Item value="Update" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.TimeSpan">
+      <Item value="Seconds" priority="0" />
+      <Item value="TotalSeconds" priority="0" />
+      <Item value="TotalHours" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:TimeTracker.RecentActivities">
+      <Item value="Update" priority="8" />
+      <Item value="Count" priority="0" />
+      <Item value="First" priority="3" />
+      <Item value="Last" priority="3" />
+      <Item value="ToArray" priority="1" />
+      <Item value="Contains" priority="0" />
+      <Item value="Select" priority="0" />
+      <Item value="Where" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@UserActivity.VirtualKeyCode">
+      <Item value="VK_T" priority="2" />
+      <Item value="VK_A" priority="0" />
+      <Item value="VK_CONTROL" priority="0" />
+      <Item value="VK_MENU" priority="0" />
+      <Item value="VK_SHIFT" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Boolean">
+      <Item value="ToString" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Enum">
+      <Item value="Parse" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Object">
+      <Item value="ToString" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Boolean">
+      <Item value="Parse" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:TimeTracker.IHotKeyConfig">
+      <Item value="Key" priority="2" />
+      <Item value="Alt" priority="1" />
+      <Item value="Ctrl" priority="1" />
+      <Item value="Stub" priority="3" />
+      <Item value="Shift" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:UserActivity.VirtualKeyCode">
+      <Item value="Replay" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:TimeTracker.IHotKeySpecification">
+      <Item value="Stub" priority="0" />
+      <Item value="IsSatisfiedBy" priority="0" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+</Configuration>

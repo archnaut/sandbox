@@ -1,0 +1,10 @@
+C:\Users\clementspc\Downloads\TimeTracker\TimeTracker\UserActivity.Tests\bin\Debug\UserActivity.Tests.dll
+C:\Users\clementspc\Downloads\TimeTracker\TimeTracker\UserActivity.Tests\bin\Debug\UserActivity.Tests.pdb
+C:\Users\clementspc\Downloads\TimeTracker\TimeTracker\UserActivity.Tests\bin\Debug\nunit.framework.dll
+C:\Users\clementspc\Downloads\TimeTracker\TimeTracker\UserActivity.Tests\bin\Debug\Rhino.Mocks.dll
+C:\Users\clementspc\Downloads\TimeTracker\TimeTracker\UserActivity.Tests\bin\Debug\UserActivity.dll
+C:\Users\clementspc\Downloads\TimeTracker\TimeTracker\UserActivity.Tests\bin\Debug\UserActivity.pdb
+C:\Users\clementspc\Downloads\TimeTracker\TimeTracker\UserActivity.Tests\bin\Debug\Rhino.Mocks.xml
+C:\Users\clementspc\Downloads\TimeTracker\TimeTracker\UserActivity.Tests\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\clementspc\Downloads\TimeTracker\TimeTracker\UserActivity.Tests\obj\Debug\UserActivity.Tests.dll
+C:\Users\clementspc\Downloads\TimeTracker\TimeTracker\UserActivity.Tests\obj\Debug\UserActivity.Tests.pdb

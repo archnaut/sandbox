@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeTracker", "TimeTracker\TimeTracker.csproj", "{5617A46A-CBED-4E02-9857-160BBB4A96BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserActivity", "UserActivity\UserActivity.csproj", "{199D2225-C65D-4326-A592-754F5C6A0E5C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5F445A66-7933-4FA9-A77B-835795DB923B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "thirdparty", "thirdparty", "{C0299F28-C4C5-488C-9893-E2A8632613DA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nunit", "nunit", "{4343AD14-CC96-40D7-B9E0-4DA37BB08F0F}"
+	ProjectSection(SolutionItems) = preProject
+		thirdparty\tools\nunit\nunit.framework.dll = thirdparty\tools\nunit\nunit.framework.dll
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{ABF86A06-D9AF-4BB6-B28B-1A6234EDAD4F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "rhino.mocks", "rhino.mocks", "{C5A74422-AD84-43A6-BFE8-63C36DDD9173}"
+	ProjectSection(SolutionItems) = preProject
+		thirdparty\tools\rhino.mocks\acknowledgements.txt = thirdparty\tools\rhino.mocks\acknowledgements.txt
+		thirdparty\tools\rhino.mocks\license.txt = thirdparty\tools\rhino.mocks\license.txt
+		thirdparty\tools\rhino.mocks\Rhino.Mocks.dll = thirdparty\tools\rhino.mocks\Rhino.Mocks.dll
+		thirdparty\tools\rhino.mocks\Rhino.Mocks.xml = thirdparty\tools\rhino.mocks\Rhino.Mocks.xml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserActivity.Tests", "UserActivity.Tests\UserActivity.Tests.csproj", "{867494A4-1155-4DED-B866-4275F8422A74}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeTracker.Tests", "TimeTracker.Tests\TimeTracker.Tests.csproj", "{568271DA-669D-483B-829E-225107991F5B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5617A46A-CBED-4E02-9857-160BBB4A96BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5617A46A-CBED-4E02-9857-160BBB4A96BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5617A46A-CBED-4E02-9857-160BBB4A96BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5617A46A-CBED-4E02-9857-160BBB4A96BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{199D2225-C65D-4326-A592-754F5C6A0E5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{199D2225-C65D-4326-A592-754F5C6A0E5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{199D2225-C65D-4326-A592-754F5C6A0E5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{199D2225-C65D-4326-A592-754F5C6A0E5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{867494A4-1155-4DED-B866-4275F8422A74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{867494A4-1155-4DED-B866-4275F8422A74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{867494A4-1155-4DED-B866-4275F8422A74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{867494A4-1155-4DED-B866-4275F8422A74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{568271DA-669D-483B-829E-225107991F5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{568271DA-669D-483B-829E-225107991F5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{568271DA-669D-483B-829E-225107991F5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{568271DA-669D-483B-829E-225107991F5B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C0299F28-C4C5-488C-9893-E2A8632613DA} = {5F445A66-7933-4FA9-A77B-835795DB923B}
+		{ABF86A06-D9AF-4BB6-B28B-1A6234EDAD4F} = {C0299F28-C4C5-488C-9893-E2A8632613DA}
+		{4343AD14-CC96-40D7-B9E0-4DA37BB08F0F} = {ABF86A06-D9AF-4BB6-B28B-1A6234EDAD4F}
+		{C5A74422-AD84-43A6-BFE8-63C36DDD9173} = {ABF86A06-D9AF-4BB6-B28B-1A6234EDAD4F}
+	EndGlobalSection
+EndGlobal
