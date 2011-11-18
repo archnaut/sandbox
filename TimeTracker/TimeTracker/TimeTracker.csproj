@@ -32,25 +32,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.4.2.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
-    <Reference Include="System.Data.Linq">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Xml.Linq">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Data.DataSetExtensions">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationLayer\ApplicationAdapter.cs" />
@@ -58,12 +50,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ApplicationLayer\HotKeySpecification.cs" />
+    <Compile Include="DomainLayer\Entry.cs" />
     <Compile Include="Infrastructure\FileAdapter.cs" />
     <Compile Include="ApplicationLayer\IApplicationExit.cs" />
     <Compile Include="DomainLayer\IFile.cs" />
     <Compile Include="DomainLayer\IRecentActivities.cs" />
     <Compile Include="DomainLayer\ITimesheet.cs" />
     <Compile Include="DomainLayer\ITaskEntryPresenter.cs" />
+    <Compile Include="Infrastructure\Journal.cs" />
     <Compile Include="PresentationLayer\INotifyIcon.cs" />
     <Compile Include="PresentationLayer\ITaskEntryView.cs" />
     <Compile Include="DomainLayer\Activity.cs" />
@@ -95,6 +89,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
