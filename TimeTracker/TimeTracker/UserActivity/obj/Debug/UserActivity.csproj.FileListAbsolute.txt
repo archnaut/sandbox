@@ -1,5 +1,0 @@
-C:\Users\clementspc\Downloads\TimeTracker\TimeTracker\UserActivity\bin\Debug\UserActivity.dll
-C:\Users\clementspc\Downloads\TimeTracker\TimeTracker\UserActivity\bin\Debug\UserActivity.pdb
-C:\Users\clementspc\Downloads\TimeTracker\TimeTracker\UserActivity\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\clementspc\Downloads\TimeTracker\TimeTracker\UserActivity\obj\Debug\UserActivity.dll
-C:\Users\clementspc\Downloads\TimeTracker\TimeTracker\UserActivity\obj\Debug\UserActivity.pdb
