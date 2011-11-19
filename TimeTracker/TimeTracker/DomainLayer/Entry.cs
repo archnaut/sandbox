@@ -10,16 +10,17 @@ namespace TimeTracker.DomainLayer
 	{
         private string _activity;
 
+        private Entry(){}
+        
         public Entry(DateTime date, string duration, string activity, string note)
         {
             Date = date;
             Activity = activity;
             Note = note;
-
-            var seconds = (int) (float.Parse(duration)*3600);
-            Duration = new TimeSpan(0, 0, 0, seconds);
         }
-
+		
+        public int EntryID{get; private set;}
+        
         public string Activity
         {
             get { return _activity ?? "Unknown"; }
@@ -27,8 +28,6 @@ namespace TimeTracker.DomainLayer
         }
 
         public DateTime Date{get; private set;}
-
-        public TimeSpan Duration{get; private set;}
 
         public string Note{get; private set;}
 	}
