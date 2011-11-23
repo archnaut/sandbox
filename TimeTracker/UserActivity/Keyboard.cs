@@ -18,16 +18,19 @@ namespace UserActivity
         private EventHandler<KeyboardEventArgs> _onKeyUp;
         private EventHandler<KeyboardEventArgs> _onKeyDown;
         private readonly IUser32 _user32;
+        private readonly IKernel32 _kernel32;
 
         public Keyboard()
         {
             _user32 = new User32Api();
+            _kernel32 = new Kernel32Api();
             _keyboardCallback = KeyboardCallback;
         }
 
-        internal Keyboard(IUser32 user32)
+        internal Keyboard(IUser32 user32, IKernel32 kernel32)
         {
             _user32 = user32;
+            _kernel32 = kernel32;
             _keyboardCallback = KeyboardCallback;
         }
 
@@ -92,7 +95,7 @@ namespace UserActivity
         private void HookKeyboardEvents()
         {
             //install hook
-            IntPtr module = Marshal.GetHINSTANCE(Assembly.GetExecutingAssembly().GetModules()[0]);
+            IntPtr module = _kernel32.LoadDll("user32.dll");
 
             _keyboardHookHandle = _user32.SetWindowsHook(Constants.WH_KEYBOARD_LL, _keyboardCallback, module, 0);
 

@@ -14,6 +14,7 @@ namespace UserActivity.Tests
         [SetUp]
         public void SetUp()
         {
+        	var kernel32 = MockRepository.GenerateStub<IKernel32>();
             _user32 = MockRepository.GenerateMock<IUser32>();
 
             _user32.Stub(user32 => user32.SetWindowsHook(
@@ -23,7 +24,7 @@ namespace UserActivity.Tests
                                        Arg<int>.Is.Anything)).Return(1);
 
 
-            Keyboard keyboard = new Keyboard(_user32);
+            Keyboard keyboard = new Keyboard(_user32, kernel32);
             keyboard.KeyUp += delegate { };
         }
 
@@ -46,6 +47,7 @@ namespace UserActivity.Tests
         [SetUp]
         public void SetUp()
         {
+        	var kernel32 = MockRepository.GenerateStub<IKernel32>();
             HookProc callback = delegate { return 1; };
 
             IUser32 user32 = MockRepository.GenerateStub<IUser32>();
@@ -55,7 +57,7 @@ namespace UserActivity.Tests
 
             _keyDownHandler = MockRepository.GenerateStub<EventHandler<KeyboardEventArgs>>();
 
-            Keyboard keyboard = new Keyboard(user32);
+            Keyboard keyboard = new Keyboard(user32, kernel32);
             keyboard.KeyDown += _keyDownHandler;
 
             KeyboardHookStruct keyboardData = new KeyboardHookStruct();
@@ -81,6 +83,7 @@ namespace UserActivity.Tests
         [SetUp]
         public void SetUp()
         {
+        	var kernel32 = MockRepository.GenerateStub<IKernel32>();
             HookProc callback = delegate { return 1; };
 
             IUser32 user32 = MockRepository.GenerateStub<IUser32>();
@@ -90,7 +93,7 @@ namespace UserActivity.Tests
 
             _keyUpEventHandler = MockRepository.GenerateStub<EventHandler<KeyboardEventArgs>>();
 
-            Keyboard keyboard = new Keyboard(user32);
+            Keyboard keyboard = new Keyboard(user32, kernel32);
             keyboard.KeyUp += _keyUpEventHandler;
 
             KeyboardHookStruct keyboardData = new KeyboardHookStruct();
@@ -118,6 +121,7 @@ namespace UserActivity.Tests
         [SetUp]
         public void SetUp()
         {
+        	var kernel32 = MockRepository.GenerateStub<IKernel32>();
             HookProc callback = delegate { return 1; };
 
             _user32 = MockRepository.GenerateStub<IUser32>();
@@ -129,7 +133,7 @@ namespace UserActivity.Tests
             KeyboardEventArgs eventArgs = new KeyboardEventArgs {Handled = false};
             keyboardEventHandler.Stub(handler => handler(null, null)).IgnoreArguments().WhenCalled(invocation => invocation.Arguments[1] = eventArgs);
 
-            Keyboard keyboard = new Keyboard(_user32);
+            Keyboard keyboard = new Keyboard(_user32, kernel32);
             keyboard.KeyUp += keyboardEventHandler;
 
             KeyboardHookStruct keyboardData = new KeyboardHookStruct();
@@ -157,6 +161,7 @@ namespace UserActivity.Tests
         [SetUp]
         public void SetUp()
         {
+        	var kernel32 = MockRepository.GenerateStub<IKernel32>();
             _user32 = MockRepository.GenerateStub<IUser32>();
             _user32.Stub(usr32 => usr32.SetWindowsHook(Arg<int>.Is.Anything, Arg<HookProc>.Is.Anything, Arg<IntPtr>.Is.Anything, Arg<int>.Is.Anything))
                 .WhenCalled(invocation=>_callback = (HookProc)invocation.Arguments[1])
@@ -167,7 +172,7 @@ namespace UserActivity.Tests
                 .IgnoreArguments()
                 .WhenCalled(invocation => ((KeyboardEventArgs)invocation.Arguments[1]).Handled = true);
             
-            Keyboard keyboard = new Keyboard(_user32);
+            Keyboard keyboard = new Keyboard(_user32, kernel32);
             keyboard.KeyUp += keyboardEventHandler;
 
             KeyboardHookStruct keyboardData = new KeyboardHookStruct();
@@ -194,12 +199,13 @@ namespace UserActivity.Tests
         {
             HookProc callback = delegate { return 1; };
 
+        	var kernel32 = MockRepository.GenerateStub<IKernel32>();
             _user32 = MockRepository.GenerateStub<IUser32>();
             _user32.Stub(usr32 => usr32.SetWindowsHook(Arg<int>.Is.Anything, Arg<HookProc>.Is.Anything, Arg<IntPtr>.Is.Anything, Arg<int>.Is.Anything))
                 .WhenCalled(invocation=>callback = (HookProc)invocation.Arguments[1])
                 .Return(KEYBOARD_HOOK_HANDLE);
 
-            Keyboard keyboard = new Keyboard(_user32);
+            Keyboard keyboard = new Keyboard(_user32, kernel32);
             keyboard.KeyUp += delegate { };
 
             KeyboardHookStruct keyboardData = new KeyboardHookStruct();
@@ -228,6 +234,7 @@ namespace UserActivity.Tests
         [SetUp]
         public void SetUp()
         {
+        	var kernel32 = MockRepository.GenerateStub<IKernel32>();
             HookProc callback = delegate { return 1; };
 
             _user32 = MockRepository.GenerateStub<IUser32>();
@@ -237,7 +244,7 @@ namespace UserActivity.Tests
 
             _firstHandler = MockRepository.GenerateMock<EventHandler<KeyboardEventArgs>>();
             _secondHandler = MockRepository.GenerateMock<EventHandler<KeyboardEventArgs>>();
-            Keyboard keyboard = new Keyboard(_user32);
+            Keyboard keyboard = new Keyboard(_user32, kernel32);
 
             keyboard.KeyUp += _firstHandler;
             keyboard.KeyUp += _secondHandler;
@@ -271,6 +278,7 @@ namespace UserActivity.Tests
         [SetUp]
         public void SetUp()
         {
+        	var kernel32 = MockRepository.GenerateStub<IKernel32>();
             _user32 = MockRepository.GenerateStub<IUser32>();
             _user32.Stub(usr32 => usr32.SetWindowsHook(Arg<int>.Is.Anything, Arg<HookProc>.Is.Anything, Arg<IntPtr>.Is.Anything, Arg<int>.Is.Anything))
                 .Return(KEYBOARD_HOOK_HANDLE);
@@ -278,7 +286,7 @@ namespace UserActivity.Tests
 
             EventHandler<KeyboardEventArgs> handler = MockRepository.GenerateStub<EventHandler<KeyboardEventArgs>>();
 
-            Keyboard keyboard = new Keyboard(_user32);
+            Keyboard keyboard = new Keyboard(_user32, kernel32);
             keyboard.KeyUp += handler;
             keyboard.KeyUp -= handler;
         }

@@ -55,6 +55,7 @@
     <Compile Include="IKeyboard.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Kernel32Api.cs" />
     <Compile Include="KeyboardEventArgs.cs" />
     <Compile Include="Keyboard.cs" />
     <Compile Include="KeyboardHookStruct.cs" />
