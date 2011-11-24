@@ -22,18 +22,8 @@ namespace TimeTracker
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            var keyboard = Container.Get<IKeyboard>();
-            var repository = Container.Get<IRepository>();
-
-            using (var taskEntryForm = new TaskEntryForm())
-            using (var notifyIconView = new NotifyIconView())
+            using (var applicationController = Container.Get<ApplicationController>())
             {
-                var entryPresenter = new TaskEntryPresenter(taskEntryForm, repository);
-                var reportPresenter = new ReportPresenter();
-                var presentationController = new PresentationController(entryPresenter, reportPresenter, notifyIconView);
-                
-                new ApplicationController(presentationController, keyboard);
-
                 Application.Run();
             }
         }

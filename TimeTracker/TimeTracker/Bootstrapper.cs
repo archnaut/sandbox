@@ -31,6 +31,29 @@ namespace TimeTracker
 				
 				x.For<IReportPresenter>()
 					.Use<ReportPresenter>();
+				
+				x.For<INotifyIcon>()
+					.Singleton()
+					.Use<NotifyIconView>();
+				
+				x.For<ITaskEntryView>()
+					.Singleton()
+					.Use<TaskEntryForm>();
+				
+				x.For<ITaskEntryPresenter>()
+					.Use<TaskEntryPresenter>();
+				
+				x.For<IPresentationController>()
+					.Use<PresentationController>();
+				
+				x.For<ApplicationController>()
+					.Use<ApplicationController>();
+				
+				x.For<IApplication>()
+					.Use<ApplicationAdapter>();
+				
+				x.For<IHotKeySpecification>()
+					.Use<HotKeySpecification>();
 			});
 		}
 	}

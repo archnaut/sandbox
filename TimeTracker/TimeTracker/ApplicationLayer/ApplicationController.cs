@@ -4,7 +4,7 @@ using UserActivity;
 
 namespace TimeTracker.ApplicationLayer
 {
-    public class ApplicationController
+	public class ApplicationController : IDisposable
     {
         private readonly IApplication _application;
 		private readonly IPresentationController _presentationController;
@@ -46,5 +46,10 @@ namespace TimeTracker.ApplicationLayer
             
             _application.Exit();
         }
+		
+		public void Dispose()
+		{
+			_presentationController.Dispose();
+		}
     }
 }
