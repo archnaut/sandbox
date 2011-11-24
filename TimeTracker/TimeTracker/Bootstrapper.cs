@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Data.Entity;
 using StructureMap;
+using TimeTracker.Domain;
 using TimeTracker.DomainLayer;
 using TimeTracker.Infrastructure;
 using UserActivity;
@@ -17,19 +19,12 @@ namespace TimeTracker
 		{
 			ObjectFactory.Configure(x=>{
             	x.AddRegistry(new UserActivityRegistry());
-
-				x.For<ITimesheet>()
-					.Use<Timesheet>()
-					.Ctor<string>("fileName")
-					.EqualToAppSetting("Timesheet");
 				
-				x.For<IFile>()
-					.Use<FileAdapter>()
-					.Ctor<string>("fileName")
-					.EqualToAppSetting("RecentActivitiesFile");
+				x.For<IRepository>()
+					.Use<Repository>();
 				
-				x.For<IRecentActivities>()
-					.Use<RecentActivities>();
+				x.For<DbContext>()
+					.Use<Journal>();
 			});
 		}
 	}

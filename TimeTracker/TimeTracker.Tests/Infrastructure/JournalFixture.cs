@@ -21,12 +21,13 @@ namespace TimeTracker.Tests.Infrastructure
 			}
 			
 			var journal = new Journal();
-			var first = journal.Entries.FirstOrDefault();
-			
-			Console.WriteLine("EntryID: {0}", first.EntryID);
-			Console.WriteLine("Activity: {0}", first.Activity);
-			Console.WriteLine("Date: {0}", first.Date);
-			Console.WriteLine("Note: {0}", first.Note);
+			var entries = journal.Entries;
+			foreach (var entry in entries) {
+				Console.WriteLine("EntryID: {0}", entry.EntryID);
+				Console.WriteLine("Activity: {0}", entry.Activity);
+				Console.WriteLine("Date: {0}", entry.Date);
+				Console.WriteLine("Note: {0}\n\n", entry.Note);
+			}
 		}
 	}
 }

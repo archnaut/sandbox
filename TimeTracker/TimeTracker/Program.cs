@@ -3,6 +3,7 @@ using System.Configuration;
 using System.Windows.Forms;
 
 using TimeTracker.ApplicationLayer;
+using TimeTracker.Domain;
 using TimeTracker.DomainLayer;
 using TimeTracker.Infrastructure;
 using TimeTracker.PresentationLayer;
@@ -21,14 +22,13 @@ namespace TimeTracker
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            var timesheet = Container.Get<ITimesheet>();
-            var recentActivities = Container.Get<IRecentActivities>();
             var keyboard = Container.Get<IKeyboard>();
+            var repository = Container.Get<IRepository>();
 
             using (var taskEntryForm = new TaskEntryForm())
             using (var notifyIconView = new NotifyIconView())
             {
-                TaskEntryPresenter presenter = new TaskEntryPresenter(taskEntryForm, timesheet, recentActivities);
+                TaskEntryPresenter presenter = new TaskEntryPresenter(taskEntryForm, repository);
                 NotifyIconPresenter iconPresenter = new NotifyIconPresenter(notifyIconView);
                 new ApplicationController(presenter, iconPresenter, keyboard);
 

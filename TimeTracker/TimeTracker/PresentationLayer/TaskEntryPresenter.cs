@@ -1,20 +1,23 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
+
+using TimeTracker.Domain;
 using TimeTracker.DomainLayer;
 
 namespace TimeTracker.PresentationLayer
 {
     public class TaskEntryPresenter : ITaskEntryPresenter
     {
-        private readonly IRecentActivities _recentActivities;
-        private readonly ITimesheet _timeSheet;
         private readonly ITaskEntryView _taskEntryView;
+        private readonly IRepository _repository;
+        private List<string> _recentActivities;
 
-        public TaskEntryPresenter(ITaskEntryView taskEntryView, ITimesheet timesheet, IRecentActivities recentActivities)
+        public TaskEntryPresenter(ITaskEntryView taskEntryView, IRepository repository)
         {
             _taskEntryView = taskEntryView;
-            _timeSheet = timesheet;
-            _recentActivities = recentActivities;
+			_repository = repository;
 
             taskEntryView.DurationTextChanged += DurationChanged;
             taskEntryView.KeyDown += TimeTrackerViewKeyDown;
@@ -47,19 +50,21 @@ namespace TimeTracker.PresentationLayer
                     return;
                 }
 
-                _recentActivities.Update(_taskEntryView.Activity.Trim());
+                _recentActivities.Insert(0, _taskEntryView.Activity.Trim());
+                _recentActivities = _recentActivities.Take(10).ToList();
                 _taskEntryView.SetRecentActivities(_recentActivities);
 
-                _timeSheet.Update(CreateTask());
+                _repository.Add(CreateEntry());
+                _repository.Commit();
                 _taskEntryView.Hide();
 
                 e.SuppressKeyPress = true;
             }
         }
 
-        private Task CreateTask()
+        private Entry CreateEntry()
         {
-            return new Task(DateTime.Now, _taskEntryView.Duration ,_taskEntryView.Activity, _taskEntryView.Note);
+        	return new Entry(DateTime.Now, _taskEntryView.Duration, _taskEntryView.Activity, _taskEntryView.Note);
         }
 
         private void DurationChanged(object sender, EventArgs e)
@@ -80,9 +85,19 @@ namespace TimeTracker.PresentationLayer
             if (_taskEntryView.Visible)
                 return;
 
+            _recentActivities = _recentActivities ?? GetRecentActivites();
+            
             _taskEntryView.Clear();
-            _taskEntryView.SetLastActivity(_timeSheet.GetLastTask().Activity);
+            _taskEntryView.SetLastActivity(_recentActivities.FirstOrDefault());
             _taskEntryView.Show(_recentActivities.ToArray());
+        }
+        
+        private List<string> GetRecentActivites()
+        {
+			return _repository.AllInstances<Entry>()
+            	.OrderByDescending(entry=>entry.Date)
+				.Select(entry=>entry.Activity)
+				.ToList();
         }
     }
 }
