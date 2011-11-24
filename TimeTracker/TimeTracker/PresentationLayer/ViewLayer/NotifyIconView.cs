@@ -7,13 +7,19 @@ namespace TimeTracker.PresentationLayer.ViewLayer
     public class NotifyIconView : INotifyIcon
     {
         public event EventHandler ExitApplication = delegate { };
+        public event EventHandler ShowReport = delegate{};
 
         private readonly NotifyIcon _notifyIcon = new NotifyIcon();
 
         public NotifyIconView()
         {
             _notifyIcon.Icon = Resources.StopWatch;
-            _notifyIcon.ContextMenu = new ContextMenu(new[] { new MenuItem("Exit", OnExit) });
+            
+            _notifyIcon.ContextMenu = new ContextMenu(new[] {
+				new MenuItem("Exit", OnExit),
+				new MenuItem("Report", OnShowReport)
+			});
+            
             _notifyIcon.Visible = true;
         }
 
@@ -30,6 +36,11 @@ namespace TimeTracker.PresentationLayer.ViewLayer
         private void OnExit(object sender, EventArgs args)
         {
             ExitApplication(this, EventArgs.Empty);
+        }
+        
+        private void OnShowReport(object sender, EventArgs args)
+        {
+        	ShowReport(this, EventArgs.Empty);
         }
     }
 }

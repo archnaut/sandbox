@@ -3,7 +3,7 @@ using TimeTracker.ApplicationLayer;
 
 namespace TimeTracker.PresentationLayer
 {
-    public class NotifyIconPresenter : IApplicationExit, IDisposable
+    public class NotifyIconPresenter : IDisposable
     {
         private readonly INotifyIcon _notifyIcon;
 
@@ -16,6 +16,12 @@ namespace TimeTracker.PresentationLayer
         {
             add { _notifyIcon.ExitApplication += value; }
             remove { _notifyIcon.ExitApplication -= value; }
+        }
+        
+        public event EventHandler ShowReport
+        {
+        	add{ _notifyIcon.ShowReport += value; }
+        	remove{ _notifyIcon.ShowReport -= value; }
         }
 
         public void Dispose()

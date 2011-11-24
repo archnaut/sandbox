@@ -28,9 +28,11 @@ namespace TimeTracker
             using (var taskEntryForm = new TaskEntryForm())
             using (var notifyIconView = new NotifyIconView())
             {
-                TaskEntryPresenter presenter = new TaskEntryPresenter(taskEntryForm, repository);
-                NotifyIconPresenter iconPresenter = new NotifyIconPresenter(notifyIconView);
-                new ApplicationController(presenter, iconPresenter, keyboard);
+                var entryPresenter = new TaskEntryPresenter(taskEntryForm, repository);
+                var reportPresenter = new ReportPresenter();
+                var presentationController = new PresentationController(entryPresenter, reportPresenter, notifyIconView);
+                
+                new ApplicationController(presentationController, keyboard);
 
                 Application.Run();
             }

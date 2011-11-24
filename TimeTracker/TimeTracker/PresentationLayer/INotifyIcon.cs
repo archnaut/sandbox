@@ -6,5 +6,6 @@ namespace TimeTracker.PresentationLayer
     {
         void Hide();
         event EventHandler ExitApplication;
+        event EventHandler ShowReport;
     }
 }

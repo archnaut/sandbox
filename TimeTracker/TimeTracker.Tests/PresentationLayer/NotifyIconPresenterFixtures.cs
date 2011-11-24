@@ -15,7 +15,6 @@ namespace TimeTracker.Tests.PresentationLayer
         public void SetUp()
         {
             _notifyIcon = MockRepository.GenerateMock<INotifyIcon>();
-            new NotifyIconPresenter(_notifyIcon).ExitApplication += delegate { };
         }
 
         [Test]
@@ -34,7 +33,6 @@ namespace TimeTracker.Tests.PresentationLayer
         public void SetUp()
         {
             _notifyIcon = MockRepository.GenerateMock<INotifyIcon>();
-            new NotifyIconPresenter(_notifyIcon).ExitApplication -= delegate { };
         }
 
         [Test]
@@ -53,7 +51,6 @@ namespace TimeTracker.Tests.PresentationLayer
         public void SetUp()
         {
             _notifyIcon = MockRepository.GenerateMock<INotifyIcon>();
-            new NotifyIconPresenter(_notifyIcon).Dispose();
         }
 
         [Test]

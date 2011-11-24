@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Data.Entity;
 using StructureMap;
+using TimeTracker.ApplicationLayer;
 using TimeTracker.Domain;
 using TimeTracker.DomainLayer;
 using TimeTracker.Infrastructure;
+using TimeTracker.PresentationLayer;
+using TimeTracker.PresentationLayer.ViewLayer;
 using UserActivity;
 
 namespace TimeTracker
@@ -25,6 +28,9 @@ namespace TimeTracker
 				
 				x.For<DbContext>()
 					.Use<Journal>();
+				
+				x.For<IReportPresenter>()
+					.Use<ReportPresenter>();
 			});
 		}
 	}

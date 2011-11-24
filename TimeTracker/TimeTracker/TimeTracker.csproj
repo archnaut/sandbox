@@ -56,17 +56,19 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ApplicationLayer\HotKeySpecification.cs" />
+    <Compile Include="ApplicationLayer\IPresentationController.cs" />
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="Container.cs" />
     <Compile Include="DomainLayer\Entry.cs" />
     <Compile Include="DomainLayer\IRepository.cs" />
-    <Compile Include="ApplicationLayer\IApplicationExit.cs" />
-    <Compile Include="DomainLayer\ITaskEntryPresenter.cs" />
     <Compile Include="Infrastructure\Journal.cs" />
     <Compile Include="Infrastructure\Repository.cs" />
     <Compile Include="PresentationLayer\INotifyIcon.cs" />
+    <Compile Include="PresentationLayer\IReportPresenter.cs" />
+    <Compile Include="PresentationLayer\ITaskEntryPresenter.cs" />
     <Compile Include="PresentationLayer\ITaskEntryView.cs" />
-    <Compile Include="PresentationLayer\NotifyIconPresenter.cs" />
+    <Compile Include="PresentationLayer\PresentationController.cs" />
+    <Compile Include="PresentationLayer\ReportPresenter.cs" />
     <Compile Include="PresentationLayer\TaskEntryPresenter.cs" />
     <Compile Include="PresentationLayer\ViewLayer\NotifyIconView.cs" />
     <Compile Include="PresentationLayer\ViewLayer\TaskEntryForm.cs">

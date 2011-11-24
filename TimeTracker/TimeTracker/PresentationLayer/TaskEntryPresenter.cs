@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
+using TimeTracker.ApplicationLayer;
 using TimeTracker.Domain;
 using TimeTracker.DomainLayer;
 
@@ -99,5 +100,10 @@ namespace TimeTracker.PresentationLayer
 				.Select(entry=>entry.Activity)
 				.ToList();
         }
+    	
+		public void Dispose()
+		{
+			_taskEntryView.Dispose();
+		}
     }
 }

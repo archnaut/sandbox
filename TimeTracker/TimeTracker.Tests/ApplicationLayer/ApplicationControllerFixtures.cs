@@ -4,6 +4,7 @@ using NUnit.Framework;
 using Rhino.Mocks;
 using TimeTracker.ApplicationLayer;
 using TimeTracker.DomainLayer;
+using TimeTracker.PresentationLayer;
 using UserActivity;
 
 namespace TimeTracker.Tests.ApplicationLayer
@@ -12,23 +13,22 @@ namespace TimeTracker.Tests.ApplicationLayer
     public class When_exit_application_event_is_raised
     {
         private IApplication _application;
-        private IApplicationExit _applicationExit;
         private IKeyboard _keyboard;
+        private IPresentationController _presentationController;
 
         [SetUp]
         public void SetUp()
         {
-            ITaskEntryPresenter presenter = MockRepository.GenerateMock<ITaskEntryPresenter>();
             IHotKeySpecification hotKeySpecification = MockRepository.GenerateStub<IHotKeySpecification>();
             hotKeySpecification.Stub(spec => spec.IsSatisfiedBy(Arg<IKeyboard>.Is.Anything)).Return(true);
 
+            _presentationController = MockRepository.GenerateMock<IPresentationController>();
             _keyboard = MockRepository.GenerateMock<IKeyboard>();
-            _applicationExit = MockRepository.GenerateMock<IApplicationExit>();
             _application = MockRepository.GenerateMock<IApplication>();
 
-            new ApplicationController(presenter, _applicationExit, _keyboard, _application, hotKeySpecification);
+            new ApplicationController(_presentationController, _keyboard, _application, hotKeySpecification);
 
-            _applicationExit.Raise(exit => exit.ExitApplication += null, this, EventArgs.Empty);
+            _presentationController.Raise(exit => exit.ExitApplication += null, this, EventArgs.Empty);
         }
 
         [Test]
@@ -40,7 +40,7 @@ namespace TimeTracker.Tests.ApplicationLayer
         [Test]
         public void should_unsubscribe_exit_event()
         {
-            _applicationExit.AssertWasCalled(exit=>exit.ExitApplication -= Arg<EventHandler>.Is.Anything);
+            _presentationController.AssertWasCalled(exit=>exit.ExitApplication -= Arg<EventHandler>.Is.Anything);
         }
 
         [Test]
@@ -53,15 +53,15 @@ namespace TimeTracker.Tests.ApplicationLayer
     [TestFixture]
     public class When_Ctrl_Alt_T_is_pressed
     {
-        private ITaskEntryPresenter _presenter;
+        private IPresentationController _presentationController;
         private KeyboardEventArgs _keyboardEventArgs;
 
         [SetUp]
         public void SetUp()
         {
-            IApplicationExit applicationExit = MockRepository.GenerateMock<IApplicationExit>();
-            IApplication application = MockRepository.GenerateMock<IApplication>();
-            IHotKeySpecification hotKeySpecification = MockRepository.GenerateStub<IHotKeySpecification>();
+            var application = MockRepository.GenerateMock<IApplication>();
+            var hotKeySpecification = MockRepository.GenerateStub<IHotKeySpecification>();
+            var reportPesenter = MockRepository.GenerateStub<IReportPresenter>();
             hotKeySpecification.Stub(spec => spec.IsSatisfiedBy(Arg<IKeyboard>.Is.Anything)).Return(true);
 
             IKeyboard keyboard = MockRepository.GenerateMock<IKeyboard>();
@@ -71,9 +71,9 @@ namespace TimeTracker.Tests.ApplicationLayer
             keyboard.Stub(x => x.KeyPressed).Return(VirtualKeyCode.VK_T);
 
             _keyboardEventArgs = new KeyboardEventArgs{Handled = false};
-            _presenter = MockRepository.GenerateMock<ITaskEntryPresenter>();
+            _presentationController = MockRepository.GenerateMock<IPresentationController>();
 
-            new ApplicationController(_presenter, applicationExit, keyboard, application, hotKeySpecification);
+            new ApplicationController(_presentationController, keyboard, application, hotKeySpecification);
 
             keyboard.Raise(x=>x.KeyDown += null, this, _keyboardEventArgs);
         }
@@ -81,7 +81,7 @@ namespace TimeTracker.Tests.ApplicationLayer
         [Test]
         public void should_show_time_tracker_view()
         {
-            _presenter.AssertWasCalled(presenter=>presenter.ShowView());
+            _presentationController.AssertWasCalled(presenter=>presenter.ShowEntryView());
         }
 
         [Test]
@@ -94,15 +94,14 @@ namespace TimeTracker.Tests.ApplicationLayer
     [TestFixture]
     public class When_something_other_than_Ctrl_Alt_T_is_pressed
     {
-        private ITaskEntryPresenter _presenter;
+        private IPresentationController _presentationController;
         private KeyboardEventArgs _keyboardEventArgs;
 
         [SetUp]
         public void SetUp()
         {
-            IApplicationExit applicationExit = MockRepository.GenerateMock<IApplicationExit>();
-            IApplication application = MockRepository.GenerateMock<IApplication>();
-            IHotKeySpecification _hotKeySpecification = MockRepository.GenerateStub<IHotKeySpecification>();
+            var application = MockRepository.GenerateMock<IApplication>();
+            var _hotKeySpecification = MockRepository.GenerateStub<IHotKeySpecification>();
             _hotKeySpecification.Stub(spec => spec.IsSatisfiedBy(Arg<IKeyboard>.Is.Anything)).Return(false);
 
             IKeyboard keyboard = MockRepository.GenerateMock<IKeyboard>();
@@ -112,9 +111,9 @@ namespace TimeTracker.Tests.ApplicationLayer
             keyboard.Stub(x => x.KeyPressed).Return(VirtualKeyCode.VK_A);
 
             _keyboardEventArgs = new KeyboardEventArgs { Handled = false };
-            _presenter = MockRepository.GenerateStrictMock<ITaskEntryPresenter>();
+            _presentationController = MockRepository.GenerateStrictMock<IPresentationController>();
 
-            new ApplicationController(_presenter, applicationExit, keyboard, application, _hotKeySpecification);
+            new ApplicationController(_presentationController, keyboard, application, _hotKeySpecification);
 
             keyboard.Raise(x=>x.KeyDown += null, this, _keyboardEventArgs);
         }

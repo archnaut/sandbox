@@ -7,27 +7,26 @@ namespace TimeTracker.ApplicationLayer
     public class ApplicationController
     {
         private readonly IApplication _application;
-        private readonly ITaskEntryPresenter _presenter;
-        private readonly IApplicationExit _applicationExit;
+		private readonly IPresentationController _presentationController;
         private readonly IKeyboard _keyboard;
         private readonly IHotKeySpecification _hotKeySpecification;
 
-        public ApplicationController(ITaskEntryPresenter presenter, IApplicationExit applicationExit, IKeyboard keyboard)
-            :this(presenter, applicationExit, keyboard, new ApplicationAdapter(), new HotKeySpecification()){}
+        public ApplicationController(IPresentationController presentationContoller, IKeyboard keyboard)
+            :this(presentationContoller, keyboard, new ApplicationAdapter(), new HotKeySpecification()){}
 
         public ApplicationController(
-            ITaskEntryPresenter presenter, IApplicationExit applicationExit, IKeyboard keyboard, IApplication application, IHotKeySpecification hotKeySpecification) 
+			IPresentationController presentationController			
+            , IKeyboard keyboard
+            , IApplication application
+            , IHotKeySpecification hotKeySpecification)
         {
-            _applicationExit = applicationExit;
-            _applicationExit.ExitApplication += ExitApplication;
-
+ 			_presentationController = presentationController;
             _keyboard = keyboard;
-            _keyboard.KeyDown += OnKeyboardKeyDown;
-
-            _presenter = presenter;
             _application = application;
-
             _hotKeySpecification = hotKeySpecification;
+
+ 			_presentationController.ExitApplication += ExitApplication;
+            _keyboard.KeyDown += OnKeyboardKeyDown;
         }
 
         private void OnKeyboardKeyDown(object sender, KeyboardEventArgs args)
@@ -35,7 +34,7 @@ namespace TimeTracker.ApplicationLayer
             if (!_hotKeySpecification.IsSatisfiedBy(_keyboard)) 
                 return;
             
-            _presenter.ShowView();
+            _presentationController.ShowEntryView();
             args.Handled = true;
         }
 
@@ -43,7 +42,7 @@ namespace TimeTracker.ApplicationLayer
         {
             _keyboard.KeyDown -= OnKeyboardKeyDown;
             
-            _applicationExit.ExitApplication -= ExitApplication;
+            _presentationController.ExitApplication -= ExitApplication;
             
             _application.Exit();
         }
