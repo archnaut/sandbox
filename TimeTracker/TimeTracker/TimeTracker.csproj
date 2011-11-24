@@ -35,6 +35,9 @@
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.4.2.0.0\lib\net40\EntityFramework.dll</HintPath>
     </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\packages\structuremap.2.6.3\lib\StructureMap.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core">
@@ -53,6 +56,8 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ApplicationLayer\HotKeySpecification.cs" />
+    <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Container.cs" />
     <Compile Include="DomainLayer\Entry.cs" />
     <Compile Include="Infrastructure\FileAdapter.cs" />
     <Compile Include="ApplicationLayer\IApplicationExit.cs" />

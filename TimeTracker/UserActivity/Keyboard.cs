@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 
 namespace UserActivity
 {
-    public class Keyboard : IKeyboard
+    internal class Keyboard : IKeyboard
     {
         /// <summary>
         /// This field is not objectively needed but we need to keep a reference on a delegate which will be 
@@ -20,14 +20,7 @@ namespace UserActivity
         private readonly IUser32 _user32;
         private readonly IKernel32 _kernel32;
 
-        public Keyboard()
-        {
-            _user32 = new User32Api();
-            _kernel32 = new Kernel32Api();
-            _keyboardCallback = KeyboardCallback;
-        }
-
-        internal Keyboard(IUser32 user32, IKernel32 kernel32)
+        public Keyboard(IUser32 user32, IKernel32 kernel32)
         {
             _user32 = user32;
             _kernel32 = kernel32;

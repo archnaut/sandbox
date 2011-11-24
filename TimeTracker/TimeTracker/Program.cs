@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Configuration;
 using System.Windows.Forms;
+
 using TimeTracker.ApplicationLayer;
 using TimeTracker.DomainLayer;
 using TimeTracker.Infrastructure;
 using TimeTracker.PresentationLayer;
 using TimeTracker.PresentationLayer.ViewLayer;
+using UserActivity;
 
 namespace TimeTracker
 {
@@ -14,18 +16,21 @@ namespace TimeTracker
         [STAThread]
         private static void Main()
         {
+        	Bootstrapper.Bootstrap();
+        	
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Timesheet timesheet = new Timesheet(ConfigurationManager.AppSettings["Timesheet"]);
-            RecentActivities recentActivities = new RecentActivities(new FileAdapter(ConfigurationManager.AppSettings["RecentActivitiesFile"]));
+            var timesheet = Container.Get<ITimesheet>();
+            var recentActivities = Container.Get<IRecentActivities>();
+            var keyboard = Container.Get<IKeyboard>();
 
-            using (TaskEntryForm taskEntryForm = new TaskEntryForm())
-            using (NotifyIconView notifyIconView = new NotifyIconView())
+            using (var taskEntryForm = new TaskEntryForm())
+            using (var notifyIconView = new NotifyIconView())
             {
                 TaskEntryPresenter presenter = new TaskEntryPresenter(taskEntryForm, timesheet, recentActivities);
                 NotifyIconPresenter iconPresenter = new NotifyIconPresenter(notifyIconView);
-                new ApplicationController(presenter, iconPresenter);
+                new ApplicationController(presenter, iconPresenter, keyboard);
 
                 Application.Run();
             }

@@ -12,8 +12,8 @@ namespace TimeTracker.ApplicationLayer
         private readonly IKeyboard _keyboard;
         private readonly IHotKeySpecification _hotKeySpecification;
 
-        public ApplicationController(ITaskEntryPresenter presenter, IApplicationExit applicationExit)
-            :this(presenter, applicationExit, new Keyboard(), new ApplicationAdapter(), new HotKeySpecification()){}
+        public ApplicationController(ITaskEntryPresenter presenter, IApplicationExit applicationExit, IKeyboard keyboard)
+            :this(presenter, applicationExit, keyboard, new ApplicationAdapter(), new HotKeySpecification()){}
 
         public ApplicationController(
             ITaskEntryPresenter presenter, IApplicationExit applicationExit, IKeyboard keyboard, IApplication application, IHotKeySpecification hotKeySpecification) 
