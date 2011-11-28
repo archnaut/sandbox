@@ -2,6 +2,7 @@
 using System;
 using NUnit.Framework;
 using Rhino.Mocks;
+using StructureMap.AutoMocking;
 using TimeTracker.ApplicationLayer;
 using TimeTracker.DomainLayer;
 using TimeTracker.PresentationLayer;
@@ -19,14 +20,18 @@ namespace TimeTracker.Tests.ApplicationLayer
         [SetUp]
         public void SetUp()
         {
-            IHotKeySpecification hotKeySpecification = MockRepository.GenerateStub<IHotKeySpecification>();
-            hotKeySpecification.Stub(spec => spec.IsSatisfiedBy(Arg<IKeyboard>.Is.Anything)).Return(true);
+        	var container = new RhinoAutoMocker<ApplicationController>();
+        	var hotKeySpecification = container.Get<IHotKeySpecification>();
+        	
+        	hotKeySpecification
+        		.Stub(spec => spec.IsSatisfiedBy(Arg<IKeyboard>.Is.Anything))
+        		.Return(true);
 
-            _presentationController = MockRepository.GenerateMock<IPresentationController>();
-            _keyboard = MockRepository.GenerateMock<IKeyboard>();
-            _application = MockRepository.GenerateMock<IApplication>();
+        	_presentationController = container.Get<IPresentationController>();
+            _keyboard = container.Get<IKeyboard>();
+            _application = container.Get<IApplication>();
 
-            new ApplicationController(_presentationController, _keyboard, _application, hotKeySpecification);
+            var systemUnderTest = container.ClassUnderTest;
 
             _presentationController.Raise(exit => exit.ExitApplication += null, this, EventArgs.Empty);
         }
@@ -59,29 +64,45 @@ namespace TimeTracker.Tests.ApplicationLayer
         [SetUp]
         public void SetUp()
         {
-            var application = MockRepository.GenerateMock<IApplication>();
-            var hotKeySpecification = MockRepository.GenerateStub<IHotKeySpecification>();
-            var reportPesenter = MockRepository.GenerateStub<IReportPresenter>();
-            hotKeySpecification.Stub(spec => spec.IsSatisfiedBy(Arg<IKeyboard>.Is.Anything)).Return(true);
+        	var container = new RhinoAutoMocker<ApplicationController>();
+            var application = container.Get<IApplication>();
+            var hotKeySpecification = container.Get<IHotKeySpecification>();
+            var reportPesenter = container.Get<IReportPresenter>();
+            var keyboard = container.Get<IKeyboard>();
 
-            IKeyboard keyboard = MockRepository.GenerateMock<IKeyboard>();
-            keyboard.Stub(x => x.AltPressed).Return(true);
-            keyboard.Stub(x => x.CtrlPressed).Return(true);
-            keyboard.Stub(x => x.ShiftPressed).Return(true);
-            keyboard.Stub(x => x.KeyPressed).Return(VirtualKeyCode.VK_T);
-
+            _presentationController = container.Get<IPresentationController>();
             _keyboardEventArgs = new KeyboardEventArgs{Handled = false};
-            _presentationController = MockRepository.GenerateMock<IPresentationController>();
+            
+            hotKeySpecification
+            	.Stub(spec => spec.IsSatisfiedBy(Arg<IKeyboard>.Is.Anything))
+            	.Return(true);
 
-            new ApplicationController(_presentationController, keyboard, application, hotKeySpecification);
+            keyboard
+            	.Stub(x => x.AltPressed)
+            	.Return(true);
+            
+            keyboard
+            	.Stub(x => x.CtrlPressed)
+            	.Return(true);
+            
+            keyboard
+            	.Stub(x => x.ShiftPressed)
+            	.Return(true);
+            
+            keyboard
+            	.Stub(x => x.KeyPressed)
+            	.Return(VirtualKeyCode.VK_T);
 
+            var systemUnderTest = container.ClassUnderTest;
+            
             keyboard.Raise(x=>x.KeyDown += null, this, _keyboardEventArgs);
         }
 
         [Test]
         public void should_show_time_tracker_view()
         {
-            _presentationController.AssertWasCalled(presenter=>presenter.ShowEntryView());
+            _presentationController
+            	.AssertWasCalled(presenter=>presenter.ShowEntryView());
         }
 
         [Test]
@@ -100,20 +121,35 @@ namespace TimeTracker.Tests.ApplicationLayer
         [SetUp]
         public void SetUp()
         {
-            var application = MockRepository.GenerateMock<IApplication>();
-            var _hotKeySpecification = MockRepository.GenerateStub<IHotKeySpecification>();
-            _hotKeySpecification.Stub(spec => spec.IsSatisfiedBy(Arg<IKeyboard>.Is.Anything)).Return(false);
-
-            IKeyboard keyboard = MockRepository.GenerateMock<IKeyboard>();
-            keyboard.Stub(x => x.AltPressed).Return(false);
-            keyboard.Stub(x => x.CtrlPressed).Return(false);
-            keyboard.Stub(x => x.ShiftPressed).Return(false);
-            keyboard.Stub(x => x.KeyPressed).Return(VirtualKeyCode.VK_A);
-
+        	var container = new RhinoAutoMocker<ApplicationController>();
+            var application = container.Get<IApplication>();
+            var hotKeySpecification = container.Get<IHotKeySpecification>();
+            var keyboard = container.Get<IKeyboard>();
+            
             _keyboardEventArgs = new KeyboardEventArgs { Handled = false };
-            _presentationController = MockRepository.GenerateStrictMock<IPresentationController>();
+            _presentationController = container.Get<IPresentationController>();
+                                    
+            hotKeySpecification
+            	.Stub(spec => spec.IsSatisfiedBy(Arg<IKeyboard>.Is.Anything))
+            	.Return(false);
 
-            new ApplicationController(_presentationController, keyboard, application, _hotKeySpecification);
+            keyboard
+            	.Stub(x => x.AltPressed)
+            	.Return(false);
+            
+            keyboard
+            	.Stub(x => x.CtrlPressed)
+            	.Return(false);
+            
+            keyboard
+            	.Stub(x => x.ShiftPressed)
+            	.Return(false);
+            
+            keyboard
+            	.Stub(x => x.KeyPressed)
+            	.Return(VirtualKeyCode.VK_A);
+
+            var systemUnderTest = container.ClassUnderTest;
 
             keyboard.Raise(x=>x.KeyDown += null, this, _keyboardEventArgs);
         }
@@ -122,6 +158,33 @@ namespace TimeTracker.Tests.ApplicationLayer
         public void should_not_handle_key_down_event()
         {
             Assert.IsFalse(_keyboardEventArgs.Handled);
+        }
+    }
+    
+    [TestFixture]
+    public class When_Disposed
+    {
+        private IPresentationController _presentationController;
+                
+        [SetUp]
+        public void SetUp()
+        {
+        	var container = new RhinoAutoMocker<ApplicationController>();
+            var application = container.Get<IApplication>();
+            var hotKeySpecification = container.Get<IHotKeySpecification>();
+            var keyboard = container.Get<IKeyboard>();
+            var keyboardEventArgs = new KeyboardEventArgs { Handled = false };
+            
+            _presentationController = container.Get<IPresentationController>();
+
+            container.ClassUnderTest.Dispose();
+        }
+    	
+        [Test]
+        public void Should_Dispose_PresentationController()
+        {
+        	_presentationController
+        		.AssertWasCalled(x=>x.Dispose());
         }
     }
 }

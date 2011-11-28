@@ -43,6 +43,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\thirdparty\tools\rhino.mocks\Rhino.Mocks.dll</HintPath>
     </Reference>
+    <Reference Include="StructureMap.AutoMocking">
+      <HintPath>..\packages\structuremap.2.6.3\lib\StructureMap.AutoMocking.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core">
@@ -62,9 +65,19 @@
   <ItemGroup>
     <Compile Include="ApplicationLayer\ApplicationControllerFixtures.cs" />
     <Compile Include="Infrastructure\JournalFixture.cs" />
-    <Compile Include="PresentationLayer\NotifyIconPresenterFixtures.cs" />
+    <Compile Include="PresentationLayer\EntryPresenterTests\When_time_changes_and_time_is_time_is_empty.cs" />
+    <Compile Include="PresentationLayer\EntryPresenterTests\When_time_changes_and_valid_time_becomes_invalid.cs" />
+    <Compile Include="PresentationLayer\EntryPresenterTests\When_time_changes_to_a_valid_time.cs" />
+    <Compile Include="PresentationLayer\EntryPresenterTests\When_time_tracker_presenter_is_constructed.cs" />
+    <Compile Include="PresentationLayer\EntryPresenterTests\When_view_is_visible_and_escape_is_pressed.cs" />
+    <Compile Include="PresentationLayer\EntryPresenterTests\When_view_is_visible_time_and_task_are_not_null_and_enter_is_pressed.cs" />
+    <Compile Include="PresentationLayer\EntryPresenterTests\When_view_is_visible_time_is_empty_and_enter_is_pressed.cs" />
+    <Compile Include="PresentationLayer\EntryPresenterTests\When_view_is_visible_time_is_not_empty_task_is_empty_and_enter_is_pressed.cs" />
+    <Compile Include="PresentationLayer\PresentationControllerTests\When_disposed.cs" />
+    <Compile Include="PresentationLayer\PresentationControllerTests\When_exit_application_is_subscribed.cs" />
+    <Compile Include="PresentationLayer\PresentationControllerTests\When_exit_application_is_unsubscribed.cs" />
+    <Compile Include="PresentationLayer\PresentationControllerTests\When_show_report_event_is_raised.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PresentationLayer\TimeTrackerPresenterFixtures.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TimeTracker\TimeTracker.csproj">
@@ -78,6 +91,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Infrastructure" />
+    <Folder Include="PresentationLayer\EntryPresenterTests" />
+    <Folder Include="PresentationLayer\PresentationControllerTests" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

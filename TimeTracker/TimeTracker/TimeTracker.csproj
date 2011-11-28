@@ -66,10 +66,10 @@
     <Compile Include="PresentationLayer\INotifyIcon.cs" />
     <Compile Include="PresentationLayer\IReportPresenter.cs" />
     <Compile Include="PresentationLayer\ITaskEntryPresenter.cs" />
-    <Compile Include="PresentationLayer\ITaskEntryView.cs" />
     <Compile Include="PresentationLayer\PresentationController.cs" />
     <Compile Include="PresentationLayer\ReportPresenter.cs" />
     <Compile Include="PresentationLayer\TaskEntryPresenter.cs" />
+    <Compile Include="PresentationLayer\ViewLayer\ITaskEntryView.cs" />
     <Compile Include="PresentationLayer\ViewLayer\NotifyIconView.cs" />
     <Compile Include="PresentationLayer\ViewLayer\TaskEntryForm.cs">
       <SubType>Form</SubType>

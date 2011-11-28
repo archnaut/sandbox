@@ -37,7 +37,9 @@ namespace TimeTracker.PresentationLayer
 		public void Dispose()
 		{
 			_entryPresenter.Dispose();
-			_entryPresenter.Dispose();
+			_reportPresenter.Dispose();
+			
+			_notifyIcon.Hide();
 			_notifyIcon.Dispose();
 		}
 	}
