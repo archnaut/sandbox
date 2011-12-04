@@ -11,49 +11,71 @@ using StructureMap.AutoMocking;
 namespace TimeTracker.Tests.PresentationLayer.EntryPresenterTests
 {
 	[TestFixture]
-	public class When_view_is_visible_time_and_task_are_not_null_and_enter_is_pressed
+	public class When_view_is_visible_duration_and_task_are_not_null_and_enter_is_pressed
 	{
 	    const string ACTIVITY = "Some Activity";
-	    const string NOTES = "Notes";
-	    const string DURATION = ".5";
+	    const string NOTE = "Notes";
+	    const string DURATION = "0.5";
 	    
-	    private RhinoAutoMocker<TaskEntryPresenter> _container;
+	    private RhinoAutoMocker<EntryPresenter> _container;
+	    private EntryPresenter _systemUnderTest;
+	    private IEntryView _entryView;
+	    private IRepository _repository;
+	    private IRecentActivities _recentActivities;
+	    private string[] _activities = new[]{ ACTIVITY };
 	
 	    [SetUp]
 	    public void SetUp()
 	    {
-	    	_container = new RhinoAutoMocker<TaskEntryPresenter>();
+	    	_container = new RhinoAutoMocker<EntryPresenter>();
+	    	_systemUnderTest = _container.ClassUnderTest;
+	    	_entryView = _container.Get<IEntryView>();
+	    	_repository = _container.Get<IRepository>();
+	    	_recentActivities = _container.Get<IRecentActivities>();
 	    	
-	    	var view = _container.Get<ITaskEntryView>();
-	    	
-	        view
+	      	_recentActivities
+	      		.Stub(x => x.First)
+	      		.Return(ACTIVITY);
+	      	
+	      	_recentActivities
+	      		.Stub(x => x.ToArray())
+	      		.Return(new[]{ ACTIVITY });	    	
+	        
+	      	_entryView
 	        	.Stub(x => x.Duration)
 	        	.Return(DURATION);
 	        
-	        view
+	        _entryView
         		.Stub(x => x.Activity)
 	        	.Return(ACTIVITY);
 	        
-	        view.Stub(x => x.Note).Return(NOTES);
-	        view.Raise(x => x.KeyDown += null, this, new KeyEventArgs(Keys.Enter));
+	        _entryView.Stub(x => x.Note).Return(NOTE);
+	        _entryView.Raise(x => x.KeyDown += null, this, new KeyEventArgs(Keys.Enter));
 	    }
 	
 	    [Test]
 	    public void should_set_view_recent_activities()
 	    {
-	        //View.AssertWasCalled(view => view.SetRecentActivities(RecentActivities));
+	    	_entryView.AssertWasCalled(view=>view.SetRecentActivities(_activities));
 	    }
 	
 	    [Test]
-	    public void should_update_recent_activities()
+	    public void should_add_entry()
 	    {
-	        //RecentActivities.AssertWasCalled(recentActivities => recentActivities.Update(ACTIVITY));
+	    	var entry = (Entry)_repository
+	    		.GetArgumentsForCallsMadeOn(x=>x.Add(Arg<Entry>.Is.Anything))[0][0];
+	    	
+	    	TimeSpan duration = entry.Duration;
+	    	
+	    	Assert.AreEqual(ACTIVITY, entry.Activity);
+	    	Assert.AreEqual(DURATION, duration.TotalHours.ToString());
+	    	Assert.AreEqual(NOTE, entry.Note);
 	    }
-	
+	    
 	    [Test]
-	    public void should_update_timesheet()
+	    public void should_commit_changes()
 	    {
-	        //Timesheet.AssertWasCalled(timesheet => timesheet.Update(Arg<Task>.Is.Anything));
+	    	_repository.AssertWasCalled(x => x.Commit());
 	    }
 	}
 }

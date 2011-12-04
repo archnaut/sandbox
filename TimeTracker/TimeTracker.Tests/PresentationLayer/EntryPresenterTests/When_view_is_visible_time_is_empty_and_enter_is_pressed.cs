@@ -13,23 +13,24 @@ namespace TimeTracker.Tests.PresentationLayer.EntryPresenterTests
 		[TestFixture]
 	public class When_view_is_visible_time_is_empty_and_enter_is_pressed
 	{
-		private RhinoAutoMocker<TaskEntryPresenter> _container;
-		private TaskEntryPresenter _systemUnderTest;
+		private RhinoAutoMocker<EntryPresenter> _container;
+		private EntryPresenter _systemUnderTest;
+		private IEntryView _entryView;
 		
 		[SetUp]
 		public void Setup()
 		{
-			_container = new RhinoAutoMocker<TaskEntryPresenter>();
+			_container = new RhinoAutoMocker<EntryPresenter>();
 			_systemUnderTest = _container.ClassUnderTest;
+			_entryView = _container.Get<IEntryView>();
+			
+			_entryView.Raise(x => x.KeyDown += null, this, new KeyEventArgs(Keys.Enter));
 		}
 		
 	    [Test]
 	    public void should_set_focus_to_time()
 	    {
-			var view = _container.Get<ITaskEntryView>();
-				
-			view.Raise(x => x.KeyDown += null, this, new KeyEventArgs(Keys.Enter));
-	        view.AssertWasCalled(x => x.DurationSetFocus());
+	        _entryView.AssertWasCalled(x => x.DurationSetFocus());
 	    }
 	}
 }

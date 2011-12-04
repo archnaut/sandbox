@@ -1,87 +1,62 @@
-using System;
-using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 
+using TimeTracker.Domain;
+
 namespace TimeTracker.DomainLayer
 {
-    public class RecentActivities : IRecentActivities
-    {
-        private readonly IFile _file;
-        private List<Activity> _activities;
+	public class RecentActivities : IRecentActivities
+	{
+		private IRepository _repository;
+		private List<string> _queue;
+		
+		public RecentActivities(IRepository repository)
+		{
+			_repository = repository;
+		}
 
-        public RecentActivities(IFile file)
-        {
-            _file = file;
-        }
+		public void Add(string activity)
+		{
+			LoadActivities();
+				
+			if(_queue.Contains(activity))
+				_queue.Remove(activity);
+			
+			_queue.Insert( 0, activity );
+			_queue = _queue.Take(10).ToList();
+		}
 
-        public void Update(string activityName)
-        {
-            if (_activities == null)
-                _activities = LoadActivities();
+		public string[] ToArray()
+		{
+			LoadActivities();
 
-            Update(new Activity(activityName, Environment.TickCount));
-            SaveActivities();
-        }
+			return _queue.ToArray();
+		}
 
-        public string[] ToArray()
-        {
-            return GetTasks().ToArray();
-        }
+		private void LoadActivities()
+		{
+			if (_queue != null)
+				return;
 
-        public IEnumerator<string> GetEnumerator()
-        {
-            return GetTasks().GetEnumerator();
-        }
+			_queue = GetActivities();
+		}
 
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return GetEnumerator();
-        }
-
-        private static Activity CreateActivity(string line)
-        {
-            string[] record = line.Split('|');
-            return new Activity(record[0], long.Parse(record[1]));
-        }
-
-        private List<Activity> LoadActivities()
-        {
-            if (!_file.Exists()) 
-                return new List<Activity>();
-            
-            return _file
-                .ReadAllLines()
-                .Select(line => CreateActivity(line))
-                .ToList();
-        }
-
-        private IEnumerable<string> GetTasks()
-        {
-            if (_activities == null)
-                _activities = LoadActivities();
-
-            return _activities.OrderByDescending(activity => activity.Timestamp).Select(task => task.ToString());
-        }
-
-        private void Update(Activity activity)
-        {
-            int index = _activities.FindIndex(x => x.ActivityName.Equals(activity.ActivityName));
-
-            if (index != -1)
-                _activities.RemoveAt(index);
-
-            _activities.Insert(0, activity);
-        }
-
-        private void SaveActivities()
-        {
-            string[] content = _activities
-                .Take(10)
-                .Select(activity=>string.Format("{0}|{1}", activity.ActivityName, activity.Timestamp))
-                .ToArray();
-
-            _file.WriteAllLines(content);
-        }
-    }
+		private List<string> GetActivities()
+		{
+			return _repository
+				.AllInstances<Entry>()
+				.OrderByDescending(entry => entry.Date)
+				.Take(10)
+				.Select(entry=>entry.Activity)
+				.ToList();
+		}
+		
+		public string First{
+			get {
+				return _queue.First();
+			}
+		}
+		
+	}
 }

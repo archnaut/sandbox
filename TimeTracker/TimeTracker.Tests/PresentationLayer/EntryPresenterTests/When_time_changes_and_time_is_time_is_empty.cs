@@ -11,32 +11,31 @@ using StructureMap.AutoMocking;
 namespace TimeTracker.Tests.PresentationLayer.EntryPresenterTests
 {
 	[TestFixture]
-	public class When_time_changes_and_time_is_time_is_empty
+	public class When_duration_changes_and_duration_is_empty
 	{
-		private RhinoAutoMocker<TaskEntryPresenter> _container;
+		private RhinoAutoMocker<EntryPresenter> _container;
+		private EntryPresenter _systemUnderTest;
+		private IEntryView _entryView;
+		
 		
 		[SetUp]
 		public void Setup()
 		{
-			_container = new RhinoAutoMocker<TaskEntryPresenter>();
+			_container = new RhinoAutoMocker<EntryPresenter>();
+			_systemUnderTest = _container.ClassUnderTest;
+			_entryView = _container.Get<IEntryView>();
 			
-			var view = _container.Get<ITaskEntryView>();
-		
-			view.Stub(x => x.KeyDown += Arg<KeyEventHandler>.Is.Anything);
-	        view.Stub(x => x.DurationTextChanged += Arg<EventHandler>.Is.Anything);
+			_entryView
+	        	.Stub(x => x.Duration)
+	        	.Return("");
+			
+	        _entryView.Raise(x=>x.DurationTextChanged += null, this, EventArgs.Empty);
 		}
 	
 		[Test]
-	    public void should_set_time_text_to_empty_string()
+	    public void should_set_duration_text_to_empty_string()
 	    {
-	    	var view = _container.Get<ITaskEntryView>();
-	    	
-	        view
-	        	.Stub(x => x.Duration)
-	        	.Return("");
-	        
-	        view.Stub(x => x.Duration = string.Empty);
-	        view.Raise(x=>x.DurationTextChanged += null, this, EventArgs.Empty);
+	        _entryView.AssertWasCalled(x => x.Duration = string.Empty);
 	    }
 	}
 }

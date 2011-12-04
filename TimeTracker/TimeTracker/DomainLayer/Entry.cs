@@ -12,10 +12,11 @@ namespace TimeTracker.DomainLayer
 
         private Entry(){}
         
-        public Entry(DateTime date, string duration, string activity, string note)
+        public Entry(DateTime date, double duration, string activity, string note)
         {
             Date = date;
             Activity = activity;
+            Duration = new Duration(duration);
             Note = note;
         }
 		
@@ -28,6 +29,8 @@ namespace TimeTracker.DomainLayer
         }
 
         public DateTime Date{get; private set;}
+        
+        public Duration Duration{get; private set;}
 
         public string Note{get; private set;}
 	}

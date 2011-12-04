@@ -16,7 +16,7 @@ namespace TimeTracker.Tests.Infrastructure
 		{
 			using(var systemUnderTest = new Journal())
 			{
-				systemUnderTest.Entries.Add(new Entry(DateTime.Now, "100", "Test", "Note"));
+				systemUnderTest.Entries.Add(new Entry(DateTime.Now, 100, "Test", "Note"));
 				systemUnderTest.SaveChanges();       
 			}
 			
@@ -25,6 +25,7 @@ namespace TimeTracker.Tests.Infrastructure
 			foreach (var entry in entries) {
 				Console.WriteLine("EntryID: {0}", entry.EntryID);
 				Console.WriteLine("Activity: {0}", entry.Activity);
+				Console.WriteLine("Durattion: {0}", (TimeSpan)entry.Duration);
 				Console.WriteLine("Date: {0}", entry.Date);
 				Console.WriteLine("Note: {0}\n\n", entry.Note);
 			}

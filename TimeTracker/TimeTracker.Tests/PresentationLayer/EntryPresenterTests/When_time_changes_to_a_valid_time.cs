@@ -11,28 +11,30 @@ using StructureMap.AutoMocking;
 namespace TimeTracker.Tests.PresentationLayer.EntryPresenterTests
 {
 	[TestFixture]
-	public class When_time_changes_to_a_valid_time
+	public class When_duration_changes_to_a_valid_duration
 	{
-		private RhinoAutoMocker<TaskEntryPresenter> _container;
-		private TaskEntryPresenter _systemUnderTest;
+		private RhinoAutoMocker<EntryPresenter> _container;
+		private EntryPresenter _systemUnderTest;
+		private IEntryView _entryView;
 		
 		[SetUp]
 		public void Setup()
 		{
-			_container = new RhinoAutoMocker<TaskEntryPresenter>();
+			_container = new RhinoAutoMocker<EntryPresenter>();
 			_systemUnderTest = _container.ClassUnderTest;
+			_entryView = _container.Get<IEntryView>();
+			
+			_entryView
+	        	.Stub(x => x.Duration)
+	        	.Return("0");
+	        
+	        _entryView.Raise(x=>x.DurationTextChanged += null, this, EventArgs.Empty);
 		}
 	
 		[Test]
 	    public void should_do_nothing()
 	    {
-	    	var view = _container.Get<ITaskEntryView>();
-	    	
-	        view
-	        	.Stub(x => x.Duration)
-	        	.Return("0");
-	        
-	        view.Raise(x=>x.DurationTextChanged += null, this, EventArgs.Empty);
+	    	_entryView.AssertWasNotCalled(x=>x.Duration = Arg<string>.Is.Anything);
 	    }
 	}
 }

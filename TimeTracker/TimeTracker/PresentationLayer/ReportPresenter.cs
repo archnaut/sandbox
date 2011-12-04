@@ -12,7 +12,6 @@ namespace TimeTracker.PresentationLayer
 		
 		public void Dispose()
 		{
-			throw new NotImplementedException();
 		}
 	}
 }

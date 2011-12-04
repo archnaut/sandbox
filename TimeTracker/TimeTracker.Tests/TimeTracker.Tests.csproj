@@ -64,6 +64,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationLayer\ApplicationControllerFixtures.cs" />
+    <Compile Include="DomainLayer\RecentActivitiesTests\When_existing_activity_is_added_to_recent_activities.cs" />
+    <Compile Include="DomainLayer\RecentActivitiesTests\When_activity_is_added_to_empty_recent_activities.cs" />
+    <Compile Include="DomainLayer\RecentActivitiesTests\When_activity_is_added_to_recent_activities_containing_one.cs" />
+    <Compile Include="DomainLayer\RecentActivitiesTests\When_activity_is_added_to_recent_activities_containing_ten_or_more.cs" />
     <Compile Include="Infrastructure\JournalFixture.cs" />
     <Compile Include="PresentationLayer\EntryPresenterTests\When_time_changes_and_time_is_time_is_empty.cs" />
     <Compile Include="PresentationLayer\EntryPresenterTests\When_time_changes_and_valid_time_becomes_invalid.cs" />
@@ -90,6 +94,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="DomainLayer" />
+    <Folder Include="DomainLayer\RecentActivitiesTests" />
     <Folder Include="Infrastructure" />
     <Folder Include="PresentationLayer\EntryPresenterTests" />
     <Folder Include="PresentationLayer\PresentationControllerTests" />

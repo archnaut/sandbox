@@ -6,5 +6,10 @@ namespace TimeTracker.Infrastructure
 	public class Journal : DbContext
 	{
 		public DbSet<Entry> Entries{get; set;}
+		
+		protected override void OnModelCreating(DbModelBuilder modelBuilder)
+		{
+			modelBuilder.ComplexType<Duration>();
+		}
 	}
 }

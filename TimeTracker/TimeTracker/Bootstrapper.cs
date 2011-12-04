@@ -36,12 +36,12 @@ namespace TimeTracker
 					.Singleton()
 					.Use<NotifyIconView>();
 				
-				x.For<ITaskEntryView>()
+				x.For<IEntryView>()
 					.Singleton()
-					.Use<TaskEntryForm>();
+					.Use<EntryForm>();
 				
-				x.For<ITaskEntryPresenter>()
-					.Use<TaskEntryPresenter>();
+				x.For<IEntryPresenter>()
+					.Use<EntryPresenter>();
 				
 				x.For<IPresentationController>()
 					.Use<PresentationController>();
@@ -54,6 +54,9 @@ namespace TimeTracker
 				
 				x.For<IHotKeySpecification>()
 					.Use<HotKeySpecification>();
+				
+				x.For<IRecentActivities>()
+					.Use<RecentActivities>();
 			});
 		}
 	}

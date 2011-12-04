@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Configuration;
+using System.Data.Entity;
 using System.Windows.Forms;
 
 using TimeTracker.ApplicationLayer;
@@ -17,6 +18,8 @@ namespace TimeTracker
         [STAThread]
         private static void Main()
         {
+        	Database.SetInitializer<Journal>(new DropCreateDatabaseAlways<Journal>());
+        	
         	Bootstrapper.Bootstrap();
         	
             Application.EnableVisualStyles();

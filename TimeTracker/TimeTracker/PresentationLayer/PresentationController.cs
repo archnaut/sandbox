@@ -5,11 +5,11 @@ namespace TimeTracker.PresentationLayer
 {
 	public class PresentationController : IPresentationController
 	{
-		private ITaskEntryPresenter _entryPresenter;
+		private IEntryPresenter _entryPresenter;
 		private IReportPresenter _reportPresenter;
 		private INotifyIcon _notifyIcon;
 				
-		public PresentationController(ITaskEntryPresenter entryPresenter, IReportPresenter reportPresenter, INotifyIcon notifiyIcon)
+		public PresentationController(IEntryPresenter entryPresenter, IReportPresenter reportPresenter, INotifyIcon notifiyIcon)
 		{
 			_entryPresenter = entryPresenter;
 			_reportPresenter = reportPresenter;
