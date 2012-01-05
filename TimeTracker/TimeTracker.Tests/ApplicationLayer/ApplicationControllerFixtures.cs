@@ -21,12 +21,7 @@ namespace TimeTracker.Tests.ApplicationLayer
         public void SetUp()
         {
         	var container = new RhinoAutoMocker<ApplicationController>();
-        	var hotKeySpecification = container.Get<IHotKeySpecification>();
         	
-        	hotKeySpecification
-        		.Stub(spec => spec.IsSatisfiedBy(Arg<IKeyboard>.Is.Anything))
-        		.Return(true);
-
         	_presentationController = container.Get<IPresentationController>();
             _keyboard = container.Get<IKeyboard>();
             _application = container.Get<IApplication>();

@@ -8,8 +8,5 @@ namespace UserActivity
         event EventHandler<KeyboardEventArgs> KeyDown;
 
         VirtualKeyCode KeyPressed { get; }
-        bool CtrlPressed { get; }
-        bool AltPressed { get; }
-        bool ShiftPressed { get; }
     }
 }

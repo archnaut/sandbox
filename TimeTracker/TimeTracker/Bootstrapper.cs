@@ -52,11 +52,14 @@ namespace TimeTracker
 				x.For<IApplication>()
 					.Use<ApplicationAdapter>();
 				
-				x.For<IHotKeySpecification>()
-					.Use<HotKeySpecification>();
+				x.For<IKeyChord>()
+					.Use<KeyChord>();
 				
 				x.For<IRecentActivities>()
 					.Use<RecentActivities>();
+				
+				x.For<IAppSettings>()
+					.Use<AppSettings>();
 			});
 		}
 	}

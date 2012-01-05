@@ -14,6 +14,7 @@ namespace TimeTracker.ApplicationLayer
         private static readonly bool Shift = bool.Parse(ConfigurationManager.AppSettings["shift"]);
         private static readonly bool Alt = bool.Parse(ConfigurationManager.AppSettings["alt"]);
         private static readonly bool Ctrl = bool.Parse(ConfigurationManager.AppSettings["ctrl"]);
+        
         private static readonly VirtualKeyCode Key = 
             (VirtualKeyCode)Enum.Parse(typeof(VirtualKeyCode), "VK_" + ConfigurationManager.AppSettings["key"].ToUpper());
 

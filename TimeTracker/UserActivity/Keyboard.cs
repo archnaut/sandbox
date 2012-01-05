@@ -68,21 +68,6 @@ namespace UserActivity
             get { return _keyPressed; }
         }
 
-        public bool CtrlPressed
-        {
-            get { return IsKeyPressed(VirtualKeyCode.VK_CONTROL); }
-        }
-
-        public bool AltPressed
-        {
-            get { return IsKeyPressed(VirtualKeyCode.VK_MENU); }
-        }
-
-        public bool ShiftPressed
-        {
-            get { return IsKeyPressed(VirtualKeyCode.VK_SHIFT); }
-        }
-
         private int _keyboardHookHandle;
 
         private void HookKeyboardEvents()
@@ -135,7 +120,7 @@ namespace UserActivity
                 case Constants.WM_SYSKEYDOWN:
                     _keyPressed = (VirtualKeyCode)keyboardEventData.VirtualKeyCode;
                     if(_onKeyDown != null) _onKeyDown(this, keyboardEventArgs);
-                    break;
+					break;
                 case Constants.WM_KEYUP:
                 case Constants.WM_SYSKEYUP:
                     _keyPressed = (VirtualKeyCode)keyboardEventData.VirtualKeyCode;
@@ -147,11 +132,6 @@ namespace UserActivity
                 return -1;
 
             return _user32.CallNextHook(_keyboardHookHandle, nCode, wParam, lParam);
-        }
-
-        private bool IsKeyPressed(VirtualKeyCode key)
-        {
-            return (_user32.GetKeyState(key) & 0x8000) != 0;
         }
 
         private bool NoSubscribers()

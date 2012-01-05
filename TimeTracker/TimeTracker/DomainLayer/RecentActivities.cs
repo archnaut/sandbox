@@ -52,9 +52,12 @@ namespace TimeTracker.DomainLayer
 				.ToList();
 		}
 		
-		public string First{
-			get {
-				return _queue.First();
+		public string First
+		{
+			get 
+			{
+				LoadActivities();
+				return _queue.FirstOrDefault();
 			}
 		}
 		

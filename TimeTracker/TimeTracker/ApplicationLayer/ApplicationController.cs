@@ -8,40 +8,31 @@ namespace TimeTracker.ApplicationLayer
     {
         private readonly IApplication _application;
 		private readonly IPresentationController _presentationController;
-        private readonly IKeyboard _keyboard;
-        private readonly IHotKeySpecification _hotKeySpecification;
 
-        public ApplicationController(IPresentationController presentationContoller, IKeyboard keyboard)
-            :this(presentationContoller, keyboard, new ApplicationAdapter(), new HotKeySpecification()){}
+        public ApplicationController(IPresentationController presentationContoller, IKeyChord keyChord, IKeyboard keyboard)
+            :this(presentationContoller, keyChord, new ApplicationAdapter()){}
 
         public ApplicationController(
 			IPresentationController presentationController			
-            , IKeyboard keyboard
-            , IApplication application
-            , IHotKeySpecification hotKeySpecification)
+            , IKeyChord keyChord
+            , IApplication application)
         {
  			_presentationController = presentationController;
-            _keyboard = keyboard;
             _application = application;
-            _hotKeySpecification = hotKeySpecification;
+            
+            keyChord.Struck += OnChordStruck;
 
  			_presentationController.ExitApplication += ExitApplication;
-            _keyboard.KeyDown += OnKeyboardKeyDown;
+        }
+        
+        private void OnChordStruck(object sender, EventArgs args)
+        {   
+            _presentationController.ShowEntryView();
         }
 
-        private void OnKeyboardKeyDown(object sender, KeyboardEventArgs args)
-        {
-            if (!_hotKeySpecification.IsSatisfiedBy(_keyboard)) 
-                return;
-            
-            _presentationController.ShowEntryView();
-            args.Handled = true;
-        }
 
         private void ExitApplication(object sender, EventArgs args)
-        {
-            _keyboard.KeyDown -= OnKeyboardKeyDown;
-            
+        {   
             _presentationController.ExitApplication -= ExitApplication;
             
             _application.Exit();
