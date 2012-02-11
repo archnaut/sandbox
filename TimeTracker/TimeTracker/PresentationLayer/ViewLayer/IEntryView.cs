@@ -1,10 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using System.ComponentModel;
 
 namespace TimeTracker.PresentationLayer
 {
-    public interface IEntryView : IDisposable
+    public interface IEntryView : ISynchronizeInvoke, IDisposable
     {
         string Duration { get; set; }
         string Activity { get; }

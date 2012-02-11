@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UserActivity;
+using System.Threading.Tasks;
 
 namespace TimeTracker.ApplicationLayer
 {
@@ -13,23 +14,22 @@ namespace TimeTracker.ApplicationLayer
 	{	
 		private List<VirtualKeyCode> _pressedKeys;
 		private IKeyboard _keyboard;
-		private IAppSettings _settings;
+		private IEnumerable<VirtualKeyCode> _expectedKeys;
 		
 		public KeyChord(IKeyboard keyboard, IAppSettings settings)
 		{
-			_settings = settings;
 			_pressedKeys = new List<VirtualKeyCode>();
 			_keyboard = keyboard;
 			
-			_keyboard.KeyUp += OnKeyUp;
-			_keyboard.KeyDown += OnKeyDown;
+			if(settings.Chord
+			
 		}
 		
 		public event EventHandler Struck = delegate{};
 		
 		private void OnKeyUp(object sender, KeyboardEventArgs args){
-			if(_pressedKeys.OrderBy(x=>x).SequenceEqual(_settings.ExpectedKeys.OrderBy(x=>x))){
-				Struck(this, EventArgs.Empty);
+			if(_pressedKeys.OrderBy(x=>x).SequenceEqual(_expectedKeys)){
+				Task.Factory.StartNew(()=>Struck(this, EventArgs.Empty));
 				args.Handled = true;
 			}
 		}

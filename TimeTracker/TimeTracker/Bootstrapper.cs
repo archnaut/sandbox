@@ -8,6 +8,7 @@ using TimeTracker.Infrastructure;
 using TimeTracker.PresentationLayer;
 using TimeTracker.PresentationLayer.ViewLayer;
 using UserActivity;
+using TimeTracker.Configuration;
 
 namespace TimeTracker
 {
@@ -51,10 +52,7 @@ namespace TimeTracker
 				
 				x.For<IApplication>()
 					.Use<ApplicationAdapter>();
-				
-				x.For<IKeyChord>()
-					.Use<KeyChord>();
-				
+								
 				x.For<IRecentActivities>()
 					.Use<RecentActivities>();
 				

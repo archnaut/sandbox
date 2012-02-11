@@ -19,7 +19,7 @@ namespace UserActivity
         /// <summary>
         /// Specifies a hardware scan code for the key. 
         /// </summary>
-        public int ScanCode;
+        public long ScanCode;
 
         /// <summary>
         /// Specifies the extended-key flag, event-injected flag, context code, and transition-state flag.

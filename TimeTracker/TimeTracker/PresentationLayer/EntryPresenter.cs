@@ -25,7 +25,28 @@ namespace TimeTracker.PresentationLayer
             taskEntryView.KeyDown += TimeTrackerViewKeyDown;
         }
 
-        private void TimeTrackerViewKeyDown(object sender, KeyEventArgs e)
+		public void ShowView()
+        {
+            if (_entryView.Visible)
+                return;
+
+            if(_entryView.InvokeRequired)
+            	_entryView.Invoke(new Action(ShowView), null);
+            		
+            _entryView.Clear();
+            _entryView.SetLastActivity(_recentActivities.First);
+            _entryView.Show(_recentActivities.ToArray());
+        }
+
+		public void Dispose()
+		{
+			if(_entryView.InvokeRequired)
+				_entryView.Invoke(new Action(Dispose), null);
+			
+			_entryView.Dispose();
+		}
+
+		private void TimeTrackerViewKeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode != Keys.Escape && e.KeyCode != Keys.Enter)
                 return;
@@ -81,16 +102,6 @@ namespace TimeTracker.PresentationLayer
 
             _entryView.Duration = index <= 1 ? string.Empty : durationText.Remove(index - 1);
         }
-
-        public void ShowView()
-        {
-            if (_entryView.Visible)
-                return;
-
-            _entryView.Clear();
-            _entryView.SetLastActivity(_recentActivities.First);
-            _entryView.Show(_recentActivities.ToArray());
-        }
         
         private Queue<string> GetRecentActivites()
         {
@@ -100,9 +111,5 @@ namespace TimeTracker.PresentationLayer
 				.ToQueue();
         }
     	
-		public void Dispose()
-		{
-			_entryView.Dispose();
-		}
     }
 }

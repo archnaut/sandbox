@@ -64,6 +64,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Chord.cs" />
     <Compile Include="Constants.cs">
       <SubType>Code</SubType>
     </Compile>

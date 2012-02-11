@@ -1,5 +1,6 @@
 // ReSharper disable InconsistentNaming
 using System;
+using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using NUnit.Framework;
 using Rhino.Mocks;
@@ -130,7 +131,7 @@ namespace UserActivity.Tests
                 .Return(KEYBOARD_HOOK_HANDLE);
 
             EventHandler<KeyboardEventArgs> keyboardEventHandler = MockRepository.GenerateStub<EventHandler<KeyboardEventArgs>>();
-            KeyboardEventArgs eventArgs = new KeyboardEventArgs {Handled = false};
+            KeyboardEventArgs eventArgs = new KeyboardEventArgs(0, new Dictionary<VirtualKeyCode, KeyState>()) {Handled = false};
             keyboardEventHandler.Stub(handler => handler(null, null)).IgnoreArguments().WhenCalled(invocation => invocation.Arguments[1] = eventArgs);
 
             Keyboard keyboard = new Keyboard(_user32, kernel32);

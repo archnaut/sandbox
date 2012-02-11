@@ -53,23 +53,26 @@
     </Reference>
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Input.Manipulations" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationLayer\ApplicationAdapter.cs" />
     <Compile Include="ApplicationLayer\ApplicationController.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ApplicationLayer\IAppSettings.cs" />
     <Compile Include="ApplicationLayer\IPresentationController.cs" />
-    <Compile Include="AppSettings.cs" />
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Configuration\AppSettings.cs" />
+    <Compile Include="Configuration\KeyStateSpecification.cs" />
     <Compile Include="Container.cs" />
     <Compile Include="DomainLayer\Duration.cs" />
     <Compile Include="DomainLayer\Entry.cs" />
     <Compile Include="DomainLayer\IRecentActivities.cs" />
     <Compile Include="DomainLayer\IRepository.cs" />
-    <Compile Include="DomainLayer\KeyChord.cs" />
     <Compile Include="DomainLayer\RecentActivities.cs" />
     <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="Infrastructure\Chord.cs" />
     <Compile Include="Infrastructure\Journal.cs" />
     <Compile Include="Infrastructure\Repository.cs" />
     <Compile Include="Infrastructure\Specification.cs" />
@@ -123,6 +126,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\StopWatch.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Configuration" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

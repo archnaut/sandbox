@@ -6,7 +6,5 @@ namespace UserActivity
     {
         event EventHandler<KeyboardEventArgs> KeyUp;
         event EventHandler<KeyboardEventArgs> KeyDown;
-
-        VirtualKeyCode KeyPressed { get; }
     }
 }

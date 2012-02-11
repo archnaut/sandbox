@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Linq;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.InteropServices;
 
@@ -14,9 +17,9 @@ namespace UserActivity
         /// until it is guaranteed that they will never be called.
         /// </summary>
         private static HookProc _keyboardCallback;
-        private VirtualKeyCode _keyPressed;
         private EventHandler<KeyboardEventArgs> _onKeyUp;
         private EventHandler<KeyboardEventArgs> _onKeyDown;
+        
         private readonly IUser32 _user32;
         private readonly IKernel32 _kernel32;
 
@@ -62,12 +65,7 @@ namespace UserActivity
                     UnhookKeyboardEvents();
             }
         }
-
-        public VirtualKeyCode KeyPressed
-        {
-            get { return _keyPressed; }
-        }
-
+        
         private int _keyboardHookHandle;
 
         private void HookKeyboardEvents()
@@ -110,22 +108,20 @@ namespace UserActivity
         {
             if (nCode != Constants.HC_ACTION)
                 return _user32.CallNextHook(_keyboardHookHandle, nCode, wParam, lParam);
-
-            KeyboardEventArgs keyboardEventArgs = new KeyboardEventArgs();
+            
             KeyboardHookStruct keyboardEventData = (KeyboardHookStruct)Marshal.PtrToStructure(lParam, typeof(KeyboardHookStruct));
+            var keyboardEventArgs = new KeyboardEventArgs(keyboardEventData.VirtualKeyCode, GetModifierKeyState());
 
             switch (wParam)
             {
                 case Constants.WM_KEYDOWN:
-                case Constants.WM_SYSKEYDOWN:
-                    _keyPressed = (VirtualKeyCode)keyboardEventData.VirtualKeyCode;
-                    if(_onKeyDown != null) _onKeyDown(this, keyboardEventArgs);
-					break;
+            		if(_onKeyDown != null)
+            			_onKeyDown(this, keyboardEventArgs);
+            		break;
                 case Constants.WM_KEYUP:
-                case Constants.WM_SYSKEYUP:
-                    _keyPressed = (VirtualKeyCode)keyboardEventData.VirtualKeyCode;
-                    if(_onKeyUp != null) _onKeyUp(this, keyboardEventArgs);
-                    break;
+					if(_onKeyUp != null)
+            			_onKeyUp(this, keyboardEventArgs);
+					break;
             }
 
             if (keyboardEventArgs.Handled)
@@ -138,5 +134,29 @@ namespace UserActivity
         {
             return _onKeyUp == null && _onKeyDown == null;
         }
+        
+        private KeyState GetKeyState(VirtualKeyCode virtualKey) 
+        {
+        	return 0 != (_user32.GetKeyState(virtualKey) & 0x8000)
+        		? KeyState.Down
+        		: KeyState.Up;
+    	}
+        
+        private IDictionary<VirtualKeyCode,KeyState> GetModifierKeyState()
+        {
+        	var state = new Dictionary<VirtualKeyCode,KeyState>();
+			
+			state[VirtualKeyCode.VK_MENU] = GetKeyState(VirtualKeyCode.VK_MENU);
+			state[VirtualKeyCode.VK_CONTROL] = GetKeyState(VirtualKeyCode.VK_CONTROL);
+			state[VirtualKeyCode.VK_SHIFT] = GetKeyState(VirtualKeyCode.VK_SHIFT);
+            
+            return state;
+        }
     }
+}
+
+public enum KeyState
+{
+	Up,
+	Down
 }

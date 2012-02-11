@@ -1,6 +1,8 @@
 using System;
+using System.Diagnostics;
 using TimeTracker.DomainLayer;
 using UserActivity;
+using TimeTracker.Configuration;
 
 namespace TimeTracker.ApplicationLayer
 {
@@ -8,26 +10,31 @@ namespace TimeTracker.ApplicationLayer
     {
         private readonly IApplication _application;
 		private readonly IPresentationController _presentationController;
+		private readonly ChordSpecification _taskChordSpecification;
 
-        public ApplicationController(IPresentationController presentationContoller, IKeyChord keyChord, IKeyboard keyboard)
-            :this(presentationContoller, keyChord, new ApplicationAdapter()){}
+        public ApplicationController(IPresentationController presentationContoller, IKeyboard keyboard, IAppSettings settings)
+            :this(presentationContoller, keyboard, new ApplicationAdapter(), settings){}
 
         public ApplicationController(
 			IPresentationController presentationController			
-            , IKeyChord keyChord
-            , IApplication application)
+            , IKeyboard keyboard
+            , IApplication application
+           	, IAppSettings settings)
         {
  			_presentationController = presentationController;
             _application = application;
             
-            keyChord.Struck += OnChordStruck;
+            keyboard.KeyUp += OnKeyUp;
 
  			_presentationController.ExitApplication += ExitApplication;
+ 			
+ 			_taskChordSpecification = settings.TaskChordSpecification;
         }
         
-        private void OnChordStruck(object sender, EventArgs args)
+        private void OnKeyUp(object sender, KeyboardEventArgs args)
         {   
-            _presentationController.ShowEntryView();
+        	if(_taskChordSpecification.IsStatisfiedBy(args.Chord))
+            	_presentationController.ShowEntryView();
         }
 
 
