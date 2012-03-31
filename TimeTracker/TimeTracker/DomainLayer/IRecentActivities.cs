@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 
-using TimeTracker.Domain;
-
 namespace TimeTracker.DomainLayer
 {
 	public interface IRecentActivities

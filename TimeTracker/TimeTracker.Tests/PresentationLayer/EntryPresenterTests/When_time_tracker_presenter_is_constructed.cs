@@ -3,7 +3,6 @@ using System;
 using System.Windows.Forms;
 using NUnit.Framework;
 using Rhino.Mocks;
-using TimeTracker.Domain;
 using TimeTracker.DomainLayer;
 using TimeTracker.PresentationLayer;
 using StructureMap.AutoMocking;

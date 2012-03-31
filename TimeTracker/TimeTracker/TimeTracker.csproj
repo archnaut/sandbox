@@ -53,7 +53,6 @@
     </Reference>
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Windows.Input.Manipulations" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationLayer\ApplicationAdapter.cs" />
@@ -72,17 +71,17 @@
     <Compile Include="DomainLayer\IRepository.cs" />
     <Compile Include="DomainLayer\RecentActivities.cs" />
     <Compile Include="ExtensionMethods.cs" />
-    <Compile Include="Infrastructure\Chord.cs" />
     <Compile Include="Infrastructure\Journal.cs" />
     <Compile Include="Infrastructure\Repository.cs" />
     <Compile Include="Infrastructure\Specification.cs" />
+    <Compile Include="PresentationLayer\IEntryView.cs" />
     <Compile Include="PresentationLayer\INotifyIcon.cs" />
     <Compile Include="PresentationLayer\IReportPresenter.cs" />
     <Compile Include="PresentationLayer\IEntryPresenter.cs" />
+    <Compile Include="PresentationLayer\IReportView.cs" />
     <Compile Include="PresentationLayer\PresentationController.cs" />
     <Compile Include="PresentationLayer\ReportPresenter.cs" />
     <Compile Include="PresentationLayer\EntryPresenter.cs" />
-    <Compile Include="PresentationLayer\ViewLayer\IEntryView.cs" />
     <Compile Include="PresentationLayer\ViewLayer\NotifyIconView.cs" />
     <Compile Include="PresentationLayer\ViewLayer\EntryForm.cs">
       <SubType>Form</SubType>
@@ -90,11 +89,18 @@
     <Compile Include="PresentationLayer\ViewLayer\EntryForm.Designer.cs">
       <DependentUpon>EntryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PresentationLayer\ViewLayer\ReportView.cs" />
+    <Compile Include="PresentationLayer\ViewLayer\ReportView.Designer.cs">
+      <DependentUpon>ReportView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="PresentationLayer\ViewLayer\EntryForm.resx">
       <DependentUpon>EntryForm.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\ViewLayer\ReportView.resx">
+      <DependentUpon>ReportView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

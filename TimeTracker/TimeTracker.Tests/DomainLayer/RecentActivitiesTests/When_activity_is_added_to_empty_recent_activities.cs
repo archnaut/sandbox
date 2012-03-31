@@ -3,7 +3,6 @@ using System.Linq;
 using NUnit.Framework;
 using Rhino.Mocks;
 using StructureMap.AutoMocking;
-using TimeTracker.Domain;
 using TimeTracker.DomainLayer;
 using System.Collections.Generic;
 

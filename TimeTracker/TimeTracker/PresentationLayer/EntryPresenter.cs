@@ -4,7 +4,6 @@ using System.Linq;
 using System.Windows.Forms;
 
 using TimeTracker.ApplicationLayer;
-using TimeTracker.Domain;
 using TimeTracker.DomainLayer;
 
 namespace TimeTracker.PresentationLayer

@@ -2,7 +2,7 @@
 using System.Data.Entity;
 using System.Linq;
 
-namespace TimeTracker.Domain
+namespace TimeTracker.DomainLayer
 {
 	public interface IRepository
 	{

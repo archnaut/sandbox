@@ -2,7 +2,7 @@
 using System.Data.Entity;
 using System.Linq;
 
-using TimeTracker.Domain;
+using TimeTracker.DomainLayer;
 
 namespace TimeTracker.Infrastructure
 {

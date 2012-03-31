@@ -4,7 +4,6 @@ using System.Data.Entity;
 using System.Windows.Forms;
 
 using TimeTracker.ApplicationLayer;
-using TimeTracker.Domain;
 using TimeTracker.DomainLayer;
 using TimeTracker.Infrastructure;
 using TimeTracker.PresentationLayer;

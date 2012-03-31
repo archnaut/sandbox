@@ -25,5 +25,11 @@ namespace TimeTracker.DomainLayer
 		{
 			return instance.timeSpan;
 		}
+		
+		public override string ToString()
+		{
+			return timeSpan.TotalHours.ToString();
+		}
+
 	}
 }

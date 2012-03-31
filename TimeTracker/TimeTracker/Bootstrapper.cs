@@ -2,7 +2,6 @@
 using System.Data.Entity;
 using StructureMap;
 using TimeTracker.ApplicationLayer;
-using TimeTracker.Domain;
 using TimeTracker.DomainLayer;
 using TimeTracker.Infrastructure;
 using TimeTracker.PresentationLayer;
@@ -32,6 +31,10 @@ namespace TimeTracker
 				
 				x.For<IReportPresenter>()
 					.Use<ReportPresenter>();
+				
+				x.For<IReportView>()
+					.Singleton()
+					.Use<ReportView>();
 				
 				x.For<INotifyIcon>()
 					.Singleton()
