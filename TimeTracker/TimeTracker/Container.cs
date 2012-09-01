@@ -1,7 +1,7 @@
 ﻿using System;
 using StructureMap;
 
-namespace TimeTracker
+namespace TimeTracking
 {
 	public static class Container
 	{

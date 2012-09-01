@@ -3,10 +3,10 @@ using System;
 using NUnit.Framework;
 using Rhino.Mocks;
 using StructureMap.AutoMocking;
-using TimeTracker.ApplicationLayer;
-using TimeTracker.PresentationLayer;
+using TimeTracking;
+using TimeTracking.PresentationLayer;
 
-namespace TimeTracker.Tests.PresentationLayer.PresentationControllerTests
+namespace TimeTracking.Tests.PresentationLayer.PresentationControllerTests
 {    
     [TestFixture]
     public class When_disposed

@@ -1,7 +1,7 @@
 ﻿using System.Data.Entity;
-using TimeTracker.DomainLayer;
+using TimeTracking.DomainLayer;
 
-namespace TimeTracker.Infrastructure
+namespace TimeTracking.Infrastructure
 {
 	public class Journal : DbContext
 	{
@@ -10,6 +10,11 @@ namespace TimeTracker.Infrastructure
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
 		{
 			modelBuilder.ComplexType<Duration>();
+		}
+		
+		static Journal()
+		{
+			Database.SetInitializer<Journal>(new DropCreateDatabaseAlways<Journal>());
 		}
 	}
 }

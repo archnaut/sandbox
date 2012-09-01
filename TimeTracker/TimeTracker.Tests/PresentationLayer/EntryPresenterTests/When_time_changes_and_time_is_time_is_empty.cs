@@ -3,11 +3,11 @@ using System;
 using System.Windows.Forms;
 using NUnit.Framework;
 using Rhino.Mocks;
-using TimeTracker.DomainLayer;
-using TimeTracker.PresentationLayer;
+using TimeTracking.DomainLayer;
+using TimeTracking.PresentationLayer;
 using StructureMap.AutoMocking;
 
-namespace TimeTracker.Tests.PresentationLayer.EntryPresenterTests
+namespace TimeTracking.Tests.PresentationLayer.EntryPresenterTests
 {
 	[TestFixture]
 	public class When_duration_changes_and_duration_is_empty

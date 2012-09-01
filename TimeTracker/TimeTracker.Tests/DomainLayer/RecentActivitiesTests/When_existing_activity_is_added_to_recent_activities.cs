@@ -3,10 +3,10 @@ using System.Linq;
 using NUnit.Framework;
 using Rhino.Mocks;
 using StructureMap.AutoMocking;
-using TimeTracker.DomainLayer;
+using TimeTracking.DomainLayer;
 using System.Collections.Generic;
 
-namespace TimeTracker.Tests.DomainLayer.RecentActivitiesTests
+namespace TimeTracking.Tests.DomainLayer.RecentActivitiesTests
 {
     [TestFixture]
     public class When_existing_activity_is_added_to_recent_activities

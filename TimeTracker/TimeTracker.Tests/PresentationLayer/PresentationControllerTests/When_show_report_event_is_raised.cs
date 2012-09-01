@@ -2,9 +2,9 @@
 using NUnit.Framework;
 using Rhino.Mocks;
 using StructureMap.AutoMocking;
-using TimeTracker.PresentationLayer;
+using TimeTracking.PresentationLayer;
 
-namespace TimeTracker.Tests.PresentationLayer.PresentationControllerTests
+namespace TimeTracking.Tests.PresentationLayer.PresentationControllerTests
 {
 	[TestFixture]
 	public class When_show_report_event_is_raised

@@ -1,7 +1,7 @@
 ﻿
 using System;
 
-namespace TimeTracker.DomainLayer
+namespace TimeTracking.DomainLayer
 {
 	/// <summary>
 	/// Description of Entry.

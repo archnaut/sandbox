@@ -3,10 +3,10 @@ using System.Data.EntityClient;
 using System.Linq;
 
 using NUnit.Framework;
-using TimeTracker.DomainLayer;
-using TimeTracker.Infrastructure;
+using TimeTracking.DomainLayer;
+using TimeTracking.Infrastructure;
 
-namespace TimeTracker.Tests.Infrastructure
+namespace TimeTracking.Tests.Infrastructure
 {
 	[TestFixture]
 	public class JournalFixture

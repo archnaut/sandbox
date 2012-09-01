@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace TimeTracker.DomainLayer
+namespace TimeTracking.DomainLayer
 {
 	public class RecentActivities : IRecentActivities
 	{

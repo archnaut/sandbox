@@ -2,9 +2,9 @@
 using System.Data.Entity;
 using System.Linq;
 
-using TimeTracker.DomainLayer;
+using TimeTracking.DomainLayer;
 
-namespace TimeTracker.Infrastructure
+namespace TimeTracking.Infrastructure
 {
 	public class Repository : IRepository
 	{

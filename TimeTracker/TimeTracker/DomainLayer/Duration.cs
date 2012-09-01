@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TimeTracker.DomainLayer
+namespace TimeTracking.DomainLayer
 {
 	public class Duration
 	{

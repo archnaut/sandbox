@@ -27,13 +27,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "rhino.mocks", "rhino.mocks"
 		thirdparty\tools\rhino.mocks\Rhino.Mocks.xml = thirdparty\tools\rhino.mocks\Rhino.Mocks.xml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeTracker", "TimeTracker\TimeTracker.csproj", "{5617A46A-CBED-4E02-9857-160BBB4A96BD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeTracking", "TimeTracker\TimeTracking.csproj", "{5617A46A-CBED-4E02-9857-160BBB4A96BD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserActivity", "UserActivity\UserActivity.csproj", "{199D2225-C65D-4326-A592-754F5C6A0E5C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserActivity.Tests", "UserActivity.Tests\UserActivity.Tests.csproj", "{867494A4-1155-4DED-B866-4275F8422A74}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeTracker.Tests", "TimeTracker.Tests\TimeTracker.Tests.csproj", "{568271DA-669D-483B-829E-225107991F5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsClient", "WinFormsClient\WinFormsClient.csproj", "{3A93B1F3-BDD8-49D3-A3EF-86D057A69D64}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +61,14 @@ Global
 		{568271DA-669D-483B-829E-225107991F5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{568271DA-669D-483B-829E-225107991F5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{568271DA-669D-483B-829E-225107991F5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A93B1F3-BDD8-49D3-A3EF-86D057A69D64}.Debug|Any CPU.Build.0 = Debug|x86
+		{3A93B1F3-BDD8-49D3-A3EF-86D057A69D64}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{3A93B1F3-BDD8-49D3-A3EF-86D057A69D64}.Debug|x86.Build.0 = Debug|x86
+		{3A93B1F3-BDD8-49D3-A3EF-86D057A69D64}.Debug|x86.ActiveCfg = Debug|x86
+		{3A93B1F3-BDD8-49D3-A3EF-86D057A69D64}.Release|Any CPU.Build.0 = Release|x86
+		{3A93B1F3-BDD8-49D3-A3EF-86D057A69D64}.Release|Any CPU.ActiveCfg = Release|x86
+		{3A93B1F3-BDD8-49D3-A3EF-86D057A69D64}.Release|x86.Build.0 = Release|x86
+		{3A93B1F3-BDD8-49D3-A3EF-86D057A69D64}.Release|x86.ActiveCfg = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

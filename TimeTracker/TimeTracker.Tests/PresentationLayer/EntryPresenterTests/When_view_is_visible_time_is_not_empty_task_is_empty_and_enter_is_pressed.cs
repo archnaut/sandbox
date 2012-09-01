@@ -3,11 +3,11 @@ using System;
 using System.Windows.Forms;
 using NUnit.Framework;
 using Rhino.Mocks;
-using TimeTracker.DomainLayer;
-using TimeTracker.PresentationLayer;
+using TimeTracking.DomainLayer;
+using TimeTracking.PresentationLayer;
 using StructureMap.AutoMocking;
 
-namespace TimeTracker.Tests.PresentationLayer.EntryPresenterTests
+namespace TimeTracking.Tests.PresentationLayer.EntryPresenterTests
 {
 		[TestFixture]
 	public class When_view_is_visible_time_is_not_empty_task_is_empty_and_enter_is_pressed

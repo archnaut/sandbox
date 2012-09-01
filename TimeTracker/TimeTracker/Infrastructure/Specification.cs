@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TimeTracker.Infrastructure
+namespace TimeTracking.Infrastructure
 {
 	public abstract class Specification<TCandidate>
 	{
