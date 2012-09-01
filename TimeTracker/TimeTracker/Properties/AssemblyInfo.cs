@@ -9,9 +9,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("TimeTracker")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("AIM Healthcare")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("TimeTracker")]
-[assembly: AssemblyCopyright("Copyright © AIM Healthcare 2010")]
+[assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
