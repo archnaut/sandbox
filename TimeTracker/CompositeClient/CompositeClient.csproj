@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
   <PropertyGroup>
-    <ProjectGuid>{3A93B1F3-BDD8-49D3-A3EF-86D057A69D64}</ProjectGuid>
+    <ProjectGuid>{FBC11160-F92F-473B-A0BF-2FCA975223E0}</ProjectGuid>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>TimeTracking</RootNamespace>
-    <AssemblyName>WinFormsClient</AssemblyName>
+    <RootNamespace>CompositeClient</RootNamespace>
+    <AssemblyName>CompositeClient</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
@@ -32,15 +32,28 @@
     <DefineConstants>TRACE</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Expression.Interactions">
+      <HintPath>..\packages\Prism.4.1.0.0\lib\NET40\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism">
+      <HintPath>..\packages\Prism.4.1.0.0\lib\NET40\Microsoft.Practices.Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.Interactivity">
+      <HintPath>..\packages\Prism.4.1.0.0\lib\NET40\Microsoft.Practices.Prism.Interactivity.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Practices.ServiceLocation">
       <HintPath>..\packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>
     <Reference Include="StructureMap">
       <HintPath>..\packages\structuremap.2.6.4.1\lib\net40\StructureMap.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -48,62 +61,54 @@
     <Reference Include="System.Data.DataSetExtensions">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
-    <Reference Include="System.Data.Entity" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity">
+      <HintPath>..\packages\Prism.4.1.0.0\lib\NET40\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApplicationAdapter.cs" />
-    <Compile Include="Bootstrapper.cs" />
-    <Compile Include="Container.cs" />
-    <Compile Include="PresentationLayer\EntryPresenter.cs" />
-    <Compile Include="PresentationLayer\IEntryPresenter.cs" />
-    <Compile Include="PresentationLayer\IEntryView.cs" />
-    <Compile Include="PresentationLayer\INotifyIcon.cs" />
-    <Compile Include="PresentationLayer\IReportView.cs" />
-    <Compile Include="PresentationLayer\PresentationController.cs" />
-    <Compile Include="PresentationLayer\ReportPresenter.cs" />
-    <Compile Include="PresentationLayer\ViewLayer\EntryForm.cs">
-      <SubType>Form</SubType>
+    <ApplicationDefinition Include="App.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PresentationLayer\ViewLayer\EntryForm.Designer.cs">
-      <DependentUpon>EntryForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PresentationLayer\ViewLayer\IReportPresenter.cs" />
-    <Compile Include="PresentationLayer\ViewLayer\NotifyIconView.cs" />
-    <Compile Include="PresentationLayer\ViewLayer\ReportView.cs" />
-    <Compile Include="PresentationLayer\ViewLayer\ReportView.Designer.cs">
-      <DependentUpon>ReportView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="ClientBootstrapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TimeTrackerChord.cs" />
+    <Compile Include="Properties\WPFAssemblyInfo.cs" />
+    <Compile Include="Shell.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>Shell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StructureMapBootstrapper.cs" />
+    <Compile Include="StructureMapServiceLocator.cs" />
+    <Compile Include="TimeTracking\TimeTrackingModule.cs" />
+    <Compile Include="TimeTracking\Views\TimeTrackingView.xaml.cs">
+      <DependentUpon>TimeTrackingView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Shell.xaml" />
+    <Page Include="TimeTracking\Views\TimeTrackingView.xaml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="PresentationLayer\ViewLayer\EntryForm.resx">
-      <DependentUpon>EntryForm.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PresentationLayer\ViewLayer\ReportView.resx">
-      <DependentUpon>ReportView.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="PresentationLayer" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\TimeTracker\TimeTracking.csproj">
-      <Project>{5617A46A-CBED-4E02-9857-160BBB4A96BD}</Project>
-      <Name>TimeTracking</Name>
-    </ProjectReference>
+    <Folder Include="TimeTracking" />
+    <Folder Include="TimeTracking\Views" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
 </Project>
