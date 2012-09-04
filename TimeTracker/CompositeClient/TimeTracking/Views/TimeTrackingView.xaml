@@ -1,7 +1,6 @@
-﻿<Window x:Class="CompositeClient.TimeTracking.Views.TimeTrackingView"
+﻿<UserControl x:Class="CompositeClient.TimeTracking.Views.TimeTrackingView"
 	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-	Title="CompositeClient.TimeTracking" Height="300" Width="300">
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 	<Grid>
         <TextBlock 
         	Text="Hello World" 
@@ -13,4 +12,4 @@
         	FontWeight="Bold">
     	</TextBlock>
 	</Grid>
-</Window>
+</UserControl>

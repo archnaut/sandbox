@@ -14,7 +14,7 @@ namespace CompositeClient.TimeTracking.Views
 	/// <summary>
 	/// Interaction logic for TimeTrackingView.xaml
 	/// </summary>
-	public partial class TimeTrackingView : Window
+	public partial class TimeTrackingView : UserControl
 	{
 		public TimeTrackingView()
 		{
