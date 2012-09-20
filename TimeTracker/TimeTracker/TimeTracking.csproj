@@ -59,7 +59,7 @@
     <Compile Include="TimeTracker.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="TimeTrackerRegistry.cs" />
+    <Compile Include="TimeTrackingRegistry.cs" />
     <Compile Include="DomainLayer\Duration.cs" />
     <Compile Include="DomainLayer\Entry.cs" />
     <Compile Include="DomainLayer\IRecentActivities.cs" />

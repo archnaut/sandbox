@@ -60,7 +60,7 @@ namespace TimeTracking.Properties {
             }
         }
         
-        public static System.Drawing.Icon StopWatch {
+        public static System.Drawing.Icon StopWatchIcon {
             get {
                 object obj = ResourceManager.GetObject("StopWatch", resourceCulture);
                 return ((System.Drawing.Icon)(obj));

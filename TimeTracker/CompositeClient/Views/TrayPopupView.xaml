@@ -1,0 +1,7 @@
+﻿<UserControl x:Class="CompositeClient.Views.TrayPopupView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<Grid>
+		<Border Background="White" BorderBrush="Orange" BorderThickness="2" CornerRadius="4" Width="160" Height="40">
+      		<Button Content="Exit" HorizontalAlignment="Center" VerticalAlignment="Center" />
+    	</Border>
+	</Grid>
+</UserControl>

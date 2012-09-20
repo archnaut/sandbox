@@ -82,5 +82,10 @@ namespace CompositeClient
 		{
 			ServiceLocator.SetLocatorProvider(()=>new StructureMapServiceLocator(_container));
 		}
+		
+		protected void ConfigureContainer(Action<ConfigurationExpression> configuration)
+		{
+			_container.Configure(configuration);
+		}
 	}
 }

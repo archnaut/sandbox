@@ -1,0 +1,30 @@
+﻿using System;
+using System.Configuration;
+using System.Data;
+using System.Windows;
+using System.Xml;
+
+using Hardcodet.Wpf.TaskbarNotification;
+using TimeTracking;
+
+namespace CompositeClient
+{
+	public partial class App : Application, IApplication
+	{
+		protected override void OnStartup(StartupEventArgs e)
+		{
+			base.OnStartup(e);
+			ClientBootStrapper.Bootstrap();
+		}
+		
+		void IApplication.Run()
+		{
+			Run();
+		}
+				
+		void IApplication.Exit()
+		{
+			Shutdown();
+		}
+	}
+}

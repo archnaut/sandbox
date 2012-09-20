@@ -14,7 +14,7 @@ namespace TimeTracking.PresentationLayer.ViewLayer
 
             StartPosition = FormStartPosition.CenterScreen;
             ControlBox = false;
-            Icon = Resources.StopWatch;
+            Icon = Resources.StopWatchIcon;
 
             activityTextBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
             activityTextBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;

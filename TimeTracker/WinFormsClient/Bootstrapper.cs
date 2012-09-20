@@ -19,7 +19,7 @@ namespace TimeTracking
 		public void BootstrapStructureMap()
 		{
 			ObjectFactory.Configure(x=>{
-            	x.AddRegistry(new TimeTrackerRegistry());
+            	x.AddRegistry(new TimeTrackingRegistry());
 				
 				x.For<IReportPresenter>()
 					.Use<ReportPresenter>();
@@ -42,9 +42,9 @@ namespace TimeTracking
 				x.For<IPresentationController>()
 					.Use<PresentationController>();
 				
-				x.For<ChordSpecification>()
-					.Use<TimeTrackerChord>();
-				
+//				x.For<ChordSpecification>()
+//					.Use<TimeTrackerChord>();
+//				
 				x.For<IApplication>()
 					.Use<ApplicationAdapter>();
 

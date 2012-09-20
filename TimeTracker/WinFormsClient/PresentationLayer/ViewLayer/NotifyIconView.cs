@@ -13,7 +13,7 @@ namespace TimeTracking.PresentationLayer.ViewLayer
 
         public NotifyIconView()
         {
-            _notifyIcon.Icon = Resources.StopWatch;
+            _notifyIcon.Icon = Resources.StopWatchIcon;
             
             _notifyIcon.ContextMenu = new ContextMenu(new[] {
 				new MenuItem("Exit", OnExit),
