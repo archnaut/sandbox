@@ -6,7 +6,7 @@ namespace CompositeClient.TimeTracking
 {
 	public class TimeTrackingViewModel
 	{
-		private IEnventAggregator _eventAggregator;
+		private IEventAggregator _eventAggregator;
 		
 		public TimeTrackingViewModel(IEventAggregator eventAggregator)
 		{
@@ -17,7 +17,7 @@ namespace CompositeClient.TimeTracking
 		public DelegateCommand ExitCommand{ get; private set; }
 		
 		private void OnExit(){
-			_eventAggregator.Get<ExitEvent>().Publish();
+			_eventAggregator.GetEvent<ExitEvent>().Publish(string.Empty);
 		}
 	}
 }
