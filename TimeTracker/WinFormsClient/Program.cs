@@ -8,6 +8,7 @@ using TimeTracking.DomainLayer;
 using TimeTracking.Infrastructure;
 using TimeTracking.PresentationLayer;
 using TimeTracking.PresentationLayer.ViewLayer;
+using System.Diagnostics;
 
 namespace TimeTracking
 {
@@ -16,6 +17,7 @@ namespace TimeTracking
         [STAThread]
         private static void Main()
         {
+        	Debug.Print(typeof(Bootstrapper).AssemblyQualifiedName);
         	Bootstrapper.Bootstrap();
         	
             Application.EnableVisualStyles();

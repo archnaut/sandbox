@@ -47,7 +47,9 @@ namespace TimeTracking
 //				
 				x.For<IApplication>()
 					.Use<ApplicationAdapter>();
-
+				
+				x.For<ChordSpecification>()
+					.Use<ClientChord>();
 			});
 		}
 	}
