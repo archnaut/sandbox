@@ -142,6 +142,10 @@
     <Folder Include="TimeTracking\Views" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DataAccess\DataAccess.EF.csproj">
+      <Project>{B6F08353-AF96-48C6-B6E8-AAEAE54A228C}</Project>
+      <Name>DataAccess.EF</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TimeTracker\TimeTracking.csproj">
       <Project>{5617A46A-CBED-4E02-9857-160BBB4A96BD}</Project>
       <Name>TimeTracking</Name>

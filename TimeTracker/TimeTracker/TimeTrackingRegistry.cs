@@ -14,13 +14,7 @@ namespace TimeTracking
 		public TimeTrackingRegistry()
 		{
 			IncludeRegistry(new UserActivityRegistry());
-	
-			For<IRepository>()
-				.Use<Repository>();
-			
-			For<DbContext>()
-				.Use<Journal>();
-			
+				
 			For<TimeTracker>()
 				.Use<TimeTracker>();
 										

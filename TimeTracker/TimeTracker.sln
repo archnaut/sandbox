@@ -40,6 +40,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsClient", "WinFormsC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompositeClient", "CompositeClient\CompositeClient.csproj", "{FBC11160-F92F-473B-A0BF-2FCA975223E0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess.EF", "DataAccess\DataAccess.EF.csproj", "{B6F08353-AF96-48C6-B6E8-AAEAE54A228C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessRaven", "DataAccessRaven\DataAccessRaven.csproj", "{5ABC2D9E-FAD0-4613-9B4D-7628DE82EE21}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -80,6 +84,22 @@ Global
 		{FBC11160-F92F-473B-A0BF-2FCA975223E0}.Release|Any CPU.ActiveCfg = Release|x86
 		{FBC11160-F92F-473B-A0BF-2FCA975223E0}.Release|x86.Build.0 = Release|x86
 		{FBC11160-F92F-473B-A0BF-2FCA975223E0}.Release|x86.ActiveCfg = Release|x86
+		{B6F08353-AF96-48C6-B6E8-AAEAE54A228C}.Debug|Any CPU.Build.0 = Debug|x86
+		{B6F08353-AF96-48C6-B6E8-AAEAE54A228C}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{B6F08353-AF96-48C6-B6E8-AAEAE54A228C}.Debug|x86.Build.0 = Debug|x86
+		{B6F08353-AF96-48C6-B6E8-AAEAE54A228C}.Debug|x86.ActiveCfg = Debug|x86
+		{B6F08353-AF96-48C6-B6E8-AAEAE54A228C}.Release|Any CPU.Build.0 = Release|x86
+		{B6F08353-AF96-48C6-B6E8-AAEAE54A228C}.Release|Any CPU.ActiveCfg = Release|x86
+		{B6F08353-AF96-48C6-B6E8-AAEAE54A228C}.Release|x86.Build.0 = Release|x86
+		{B6F08353-AF96-48C6-B6E8-AAEAE54A228C}.Release|x86.ActiveCfg = Release|x86
+		{5ABC2D9E-FAD0-4613-9B4D-7628DE82EE21}.Debug|Any CPU.Build.0 = Debug|x86
+		{5ABC2D9E-FAD0-4613-9B4D-7628DE82EE21}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{5ABC2D9E-FAD0-4613-9B4D-7628DE82EE21}.Debug|x86.Build.0 = Debug|x86
+		{5ABC2D9E-FAD0-4613-9B4D-7628DE82EE21}.Debug|x86.ActiveCfg = Debug|x86
+		{5ABC2D9E-FAD0-4613-9B4D-7628DE82EE21}.Release|Any CPU.Build.0 = Release|x86
+		{5ABC2D9E-FAD0-4613-9B4D-7628DE82EE21}.Release|Any CPU.ActiveCfg = Release|x86
+		{5ABC2D9E-FAD0-4613-9B4D-7628DE82EE21}.Release|x86.Build.0 = Release|x86
+		{5ABC2D9E-FAD0-4613-9B4D-7628DE82EE21}.Release|x86.ActiveCfg = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

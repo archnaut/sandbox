@@ -76,9 +76,12 @@ namespace TimeTracking.PresentationLayer
                 _recentActivities.Add(_entryView.Activity.Trim());
                 _entryView.SetRecentActivities(_recentActivities.ToArray());
 
-                _repository.Add(CreateEntry());
-                _repository.Commit();
-                _entryView.Hide();
+                using(var unitOfWork = _repository.NewUnitOfWork())
+                {
+	                _repository.Add(CreateEntry());
+	                unitOfWork.Commit();
+	                _entryView.Hide();
+                }
 
                 e.SuppressKeyPress = true;
             }

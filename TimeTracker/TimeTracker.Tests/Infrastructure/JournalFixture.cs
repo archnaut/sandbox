@@ -5,6 +5,7 @@ using System.Linq;
 using NUnit.Framework;
 using TimeTracking.DomainLayer;
 using TimeTracking.Infrastructure;
+using DataAccess.EF;
 
 namespace TimeTracking.Tests.Infrastructure
 {

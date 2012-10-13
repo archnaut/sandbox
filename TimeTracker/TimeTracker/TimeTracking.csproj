@@ -35,9 +35,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
-    </Reference>
     <Reference Include="StructureMap">
       <HintPath>..\packages\structuremap.2.6.4.1\lib\net40\StructureMap.dll</HintPath>
     </Reference>
@@ -53,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChordSpecification.cs" />
+    <Compile Include="DomainLayer\IUnitOfWork.cs" />
     <Compile Include="IApplication.cs" />
     <Compile Include="Infrastructure\ExtensionMethods.cs" />
     <Compile Include="IPresentationController.cs" />
@@ -65,8 +63,6 @@
     <Compile Include="DomainLayer\IRecentActivities.cs" />
     <Compile Include="DomainLayer\IRepository.cs" />
     <Compile Include="DomainLayer\RecentActivities.cs" />
-    <Compile Include="Infrastructure\Journal.cs" />
-    <Compile Include="Infrastructure\Repository.cs" />
     <Compile Include="Infrastructure\Specification.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">

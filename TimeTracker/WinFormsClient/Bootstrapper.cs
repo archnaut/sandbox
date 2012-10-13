@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.Entity;
+using DataAccess.EF;
 using StructureMap;
 using TimeTracking;
 using TimeTracking.DomainLayer;
@@ -20,7 +21,9 @@ namespace TimeTracking
 		{
 			ObjectFactory.Configure(x=>{
             	x.AddRegistry(new TimeTrackingRegistry());
-				
+            	x.AddRegistry(new DataAccess.EF.DataAccessRegistry());
+            	x.AddRegistry(new DataAccess.Raven.DataAccessRegistry());	
+            	
 				x.For<IReportPresenter>()
 					.Use<ReportPresenter>();
 				
@@ -41,10 +44,7 @@ namespace TimeTracking
 				
 				x.For<IPresentationController>()
 					.Use<PresentationController>();
-				
-//				x.For<ChordSpecification>()
-//					.Use<TimeTrackerChord>();
-//				
+							
 				x.For<IApplication>()
 					.Use<ApplicationAdapter>();
 				
