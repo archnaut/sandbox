@@ -101,10 +101,6 @@
     <Folder Include="PresentationLayer" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DataAccessRaven\DataAccessRaven.csproj">
-      <Project>{5ABC2D9E-FAD0-4613-9B4D-7628DE82EE21}</Project>
-      <Name>DataAccessRaven</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DataAccess\DataAccess.EF.csproj">
       <Project>{B6F08353-AF96-48C6-B6E8-AAEAE54A228C}</Project>
       <Name>DataAccess.EF</Name>

@@ -22,7 +22,6 @@ namespace TimeTracking
 			ObjectFactory.Configure(x=>{
             	x.AddRegistry(new TimeTrackingRegistry());
             	x.AddRegistry(new DataAccess.EF.DataAccessRegistry());
-            	x.AddRegistry(new DataAccess.Raven.DataAccessRegistry());	
             	
 				x.For<IReportPresenter>()
 					.Use<ReportPresenter>();
